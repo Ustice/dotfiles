@@ -1,0 +1,6 @@
+#!/bin/zsh
+BRANCH=$(git symbolic-ref HEAD --short)
+git checkout develop
+git pull
+git checkout $BRANCH
+git rebase develop
