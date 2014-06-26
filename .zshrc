@@ -92,3 +92,6 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 export PGDATA="/usr/local/var/postgres"
 alias spider="cd /repos/MobSource/MobSource_SpiderLMS_Web"
 export NODE_IP_OVERRIDE='true'
+
+## MyMonopoly
+export MM_LOCAL_DEV='true'
