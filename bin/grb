@@ -1,6 +1,47 @@
 #!/bin/zsh
 BRANCH=$(git symbolic-ref HEAD --short)
-git checkout develop
-git pull
+
+if [ -z "$1" ]; then
+  BASE="develop"
+else
+  BASE="$1"
+fi
+
+if [ -n "$(git status --porcelain)" ];
+then
+  UNCLEAN='You have uncommitted changes. I will stashing them for you.'
+fi
+
+
+echo "Rebasing onto ${BASE}"
+
+if [ -n "$UNCLEAN" ]
+then
+  git stash
+  echo
+  echo "$UNCLEAN"
+fi
+
+echo
+echo "Switching branch to $BASE"
+git checkout $BASE
+
+echo
+echo "Pulling remove changes"
+git pull origin $BASE
+
+echo
+echo "Switching back to $BRANCH"
 git checkout $BRANCH
-git rebase develop
+
+echo
+echo "Rebasing onto $BASE"
+git rebase $BASE
+
+if [ -n "$UNCLEAN" ]
+then
+  echo
+  echo "Popping stash."
+  git stash pop
+
+fi
