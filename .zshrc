@@ -70,6 +70,9 @@ fi
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+# Convienience commands
+alias cpwd="pwd | tr '\n' ' ' | pbcopy" 
+
 # Git aliases
 alias gs="git status $*" 
 alias gaa="git add -A :/$*" 
@@ -95,3 +98,5 @@ export NODE_IP_OVERRIDE='true'
 
 ## MyMonopoly
 export MM_LOCAL_DEV='true'
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
