@@ -1,5 +1,6 @@
 #!/bin/zsh
 BRANCH=$(git symbolic-ref HEAD --short)
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
 
 if [ -z "$1" ]; then
   BASE="develop"
@@ -12,7 +13,7 @@ then
   UNCLEAN='You have uncommitted changes. I will stashing them for you.'
 fi
 
-
+echo "Project root directory: ${PROJECT_ROOT}"
 echo "Rebasing onto ${BASE}"
 
 if [ -n "$UNCLEAN" ]
@@ -44,4 +45,10 @@ then
   echo "Popping stash."
   git stash pop
 
+fi
+
+if [ -d "${PROJECT_ROOT}/node_modules" ]; then
+  echo
+  echo "Checking for new node modules."
+  npm install
 fi
