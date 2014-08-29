@@ -10,7 +10,7 @@ fi
 
 if [ -n "$(git status --porcelain)" ];
 then
-  UNCLEAN='You have uncommitted changes. I will stashing them for you.'
+  UNCLEAN='You have uncommitted changes. I will stash them for you.'
 fi
 
 echo "Project root directory: ${PROJECT_ROOT}"
