@@ -37,7 +37,7 @@ ZSH_THEME="muse"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -71,15 +71,17 @@ fi
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Convienience commands
-alias cpwd="pwd | tr '\n' ' ' | pbcopy" 
+alias cpwd="pwd | tr '\n' ' ' | pbcopy"
 
 # Git aliases
-alias gs="git status $*" 
-alias gaa="git add -A :/$*" 
-alias gcm="git commit -m $*" 
-alias gf="git fetch $*" 
+alias gs="git status $*"
+alias gaa="git add -A :/$*"
+alias gcm="git commit -m $*"
+alias gf="git fetch $*"
 alias gb="git symbolic-ref HEAD --short"
 export GITHUBUN="Ustice"
+
+alias gdf="vcsh dotfiles"
 
 alias debug="export NODE_DEBUG='verbose'"
 alias prod="export NODE_DEBUG='silent'"
@@ -88,6 +90,7 @@ alias localdev="export NODE_IP_OVERRIDE=''"
 
 alias ipconfig="ifconfig | grep 'inet '"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+export CHROME_BIN="/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome"
 
 
 # Project-specific
