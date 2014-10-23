@@ -90,8 +90,8 @@ alias localdev="export NODE_IP_OVERRIDE=''"
 
 alias ipconfig="ifconfig | grep 'inet '"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
-export CHROME_BIN="/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome"
 
+alias ccc="compass clean; compass compile"
 
 # Project-specific
 ## Spider LMS
@@ -103,3 +103,6 @@ export NODE_IP_OVERRIDE='true'
 export MM_LOCAL_DEV='true'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+## Angular Tuturial
+export CHROME_BIN="/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome"
