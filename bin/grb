@@ -52,6 +52,12 @@ git rebase $BASE
 
 if [ -d "${PROJECT_ROOT}/node_modules" ]; then
   echo
-  echo "Checking for new \e[1;37mnode modules\e[0m."
+  echo "Checking for new \e[1;37mNode modules\e[0m."
   npm install
+fi
+
+if [ -d "${PROJECT_ROOT}/bower_components" ]; then
+  echo
+  echo "Checking for new \e[1;37mBower components\e[0m."
+  bower install
 fi
