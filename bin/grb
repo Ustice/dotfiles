@@ -10,45 +10,48 @@ fi
 
 if [ -n "$(git status --porcelain)" ];
 then
-  UNCLEAN='You have uncommitted changes. I will stash them for you.'
+  UNCLEAN="\e[1;33mWARNING:\e[0m You have uncommitted changes. Please make a commit or stash them before rebasing."
+  echo "${UNCLEAN}"
+  git status
+  exit
 fi
 
-echo "Project root directory: ${PROJECT_ROOT}"
-echo "Rebasing onto ${BASE}"
+echo "Project root directory: \e[1;37m${PROJECT_ROOT}\e[0m"
+echo "Rebasing onto \e[1;37m${BASE}\e[0m"
 
-if [ -n "$UNCLEAN" ]
-then
-  git stash
-  echo
-  echo "$UNCLEAN"
-fi
+# if [ -n "$UNCLEAN" ]
+# then
+#   git stash
+#   echo
+#   echo "$UNCLEAN"
+# fi
 
 echo
-echo "Switching branch to $BASE"
+echo "Switching branch to \e[1;37m$BASE\e[0m"
 git checkout $BASE
 
 echo
-echo "Pulling remove changes"
+echo "Pulling remote changes"
 git pull origin $BASE
 
 echo
-echo "Switching back to $BRANCH"
+echo "Switching back to \e[1;37m$BRANCH\e[0m"
 git checkout $BRANCH
 
 echo
-echo "Rebasing onto $BASE"
+echo "Rebasing onto \e[1;37m$BASE\e[0m"
 git rebase $BASE
 
-if [ -n "$UNCLEAN" ]
-then
-  echo
-  echo "Popping stash."
-  git stash pop
-
-fi
+# if [ -n "$UNCLEAN" ]
+# then
+#   echo
+#   echo "Popping stash."
+#   git stash pop
+#
+# fi
 
 if [ -d "${PROJECT_ROOT}/node_modules" ]; then
   echo
-  echo "Checking for new node modules."
+  echo "Checking for new \e[1;37mnode modules\e[0m."
   npm install
 fi
