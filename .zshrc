@@ -79,6 +79,7 @@ alias gaa="git add -A :/$*"
 alias gcm="git commit -m $*"
 alias gf="git fetch $*"
 alias gb="git symbolic-ref HEAD --short"
+alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
 
 alias gdf="vcsh dotfiles"
@@ -103,6 +104,9 @@ export NODE_IP_OVERRIDE='true'
 export MM_LOCAL_DEV='true'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+## Life-Map
+export NODE_ENV="dev"
 
 ## Angular Tuturial
 export CHROME_BIN="/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome"
