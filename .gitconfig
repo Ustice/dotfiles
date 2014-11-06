@@ -1,7 +1,7 @@
 [filter "media"]
+	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-	required = true
 [user]
 	name = Ustice
 	email = ustice@gmail.com
@@ -13,3 +13,6 @@
 	lg=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
 	default = simple
+[diff]
+	tool = opendiff
+	external = /Users/jkleinberg/bin/git-diff-cmd.sh

@@ -93,6 +93,7 @@ alias ipconfig="ifconfig | grep 'inet '"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 alias ccc="compass clean; compass compile"
+alias cccw="compass clean; compass compile; compass watch"
 
 # Project-specific
 ## Spider LMS

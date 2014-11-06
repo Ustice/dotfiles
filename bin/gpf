@@ -3,7 +3,7 @@ BRANCH=$(git symbolic-ref HEAD --short)
 BDATE=$(date "+%y%m%d")
 MESSAGE=$2
 if [ -n "$1" ]; then
-	git push origin ${BRANCH}:feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -f
+	git push -u origin ${BRANCH}:feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -f
 	if [ -n "$2" ]; then
 		hub pull-request -o -b develop -h feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -m ":pr: ${1}-${BRANCH}: ${MESSAGE}"
 	else
