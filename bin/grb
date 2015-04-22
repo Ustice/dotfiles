@@ -1,12 +1,16 @@
 #!/bin/zsh
 BRANCH=$(git symbolic-ref HEAD --short)
 PROJECT_ROOT=$(git rev-parse --show-toplevel)
+LOCAL_HEAD=$(git rev-parse HEAD)
 
 if [ -z "$1" ]; then
   BASE="develop"
 else
   BASE="$1"
 fi
+
+git fetch
+REMOTE_HEAD=$(git rev-parse ${BASE})
 
 if [ -n "$(git status --porcelain)" ];
 then
@@ -19,44 +23,34 @@ fi
 echo "Project root directory: \e[1;37m${PROJECT_ROOT}\e[0m"
 echo "Rebasing onto \e[1;37m${BASE}\e[0m"
 
-# if [ -n "$UNCLEAN" ]
-# then
-#   git stash
-#   echo
-#   echo "$UNCLEAN"
-# fi
-
-echo
-echo "Switching branch to \e[1;37m$BASE\e[0m"
-git checkout $BASE
-
-echo
-echo "Pulling remote changes"
-git pull origin $BASE
-
-echo
-echo "Switching back to \e[1;37m$BRANCH\e[0m"
-git checkout $BRANCH
-
-echo
-echo "Rebasing onto \e[1;37m$BASE\e[0m"
-git rebase $BASE
-
-# if [ -n "$UNCLEAN" ]
-# then
-#   echo
-#   echo "Popping stash."
-#   git stash pop
+# echo
+# echo "Switching branch to \e[1;37m$BASE\e[0m"
+# git checkout $BASE
 #
-# fi
+# echo
+# echo "Pulling remote changes"
+# git pull origin $BASE
+#
+# echo
+# echo "Switching back to \e[1;37m$BRANCH\e[0m"
+# git checkout $BRANCH
+#
+# echo
+# echo "Rebasing onto \e[1;37m$BASE\e[0m"
+# git rebase $BASE
 
-if [ -d "${PROJECT_ROOT}/node_modules" ]; then
+
+#
+# All of the above can be replaced with
+git pull --rebase origin $BASE
+
+if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'package.json')" ]; then
   echo
   echo "Checking for new \e[1;37mNode modules\e[0m."
   npm install
 fi
 
-if [ -d "${PROJECT_ROOT}/bower_components" ]; then
+if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'bower.json')"]; then
   echo
   echo "Checking for new \e[1;37mBower components\e[0m."
   bower install

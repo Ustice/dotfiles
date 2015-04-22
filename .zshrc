@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="muse"
+# ZSH_THEME="muse"
+ZSH_THEME="powerline"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,21 +46,40 @@ ZSH_THEME="muse"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git z)
+plugins=(git npm z)
+
+# Powerline oh-my-zsh theme options
+# https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
+POWERLINE_DATE_FORMAT="%D{%y%m%d}"
+POWERLINE_FULL_CURRENT_PATH="true"
+POWERLINE_SHOW_GIT_ON_RIGHT="true"
+POWERLINE_DETECT_SSH="true"
+POWERLINE_RIGHT_A="date"
+export TERM="xterm-256color"
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jkleinberg/bin:/usr/local/Cellar/android-sdk/22.6.2/tools"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# User customizations
+export PATH="/Users/jkleinberg/bin:$PATH"
+# Android SDK
+export PATH="/usr/local/Cellar/android-sdk/22.6.2/tools:$PATH"
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='subl -w'
+  export EDITOR='atom'
 fi
+
+# For node-oracledb: https://github.com/oracle/node-oracledb/blob/a867a81ab73ae8238b7fdabbfcf380fdf2eab26d/INSTALL.md#instosx
+export DYLD_LIBRARY_PATH=/opt/oracle/instantclient
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -95,6 +115,8 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 alias ccc="compass clean; compass compile"
 alias cccw="compass clean; compass compile; compass watch"
 
+alias bump="npm version minor"
+
 # Project-specific
 ## Spider LMS
 export PGDATA="/usr/local/var/postgres"
@@ -103,11 +125,12 @@ export NODE_IP_OVERRIDE='true'
 
 ## MyMonopoly
 export MM_LOCAL_DEV='true'
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 ## Life-Map
-export NODE_ENV="dev"
+export NODE_ENV="local"
 
 ## Angular Tuturial
 export CHROME_BIN="/Applications/Google Chrome Dev.app/Contents/MacOS/Google Chrome"
+
+## JWA
+export NODE_PATH=/usr/local/lib/node_modules
