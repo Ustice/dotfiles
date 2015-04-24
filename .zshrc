@@ -87,6 +87,10 @@ export DYLD_LIBRARY_PATH=/opt/oracle/instantclient
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Adds ability to move cursor forward and back a word at a time
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
+
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
