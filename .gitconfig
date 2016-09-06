@@ -5,10 +5,11 @@
 [user]
 	name = Ustice
 	email = ustice@gmail.com
+	signingkey = 30042D41426D8722
 [github]
 	user=Ustice
 [color]
-	ui=auto
+	ui = true
 [alias]
 	lg=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
@@ -24,3 +25,9 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[core]
+	editor = atom --wait
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

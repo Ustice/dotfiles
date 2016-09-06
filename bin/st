@@ -1,0 +1,17 @@
+#!/bin/zsh
+GIT_EMAIL=$(git config user.email)
+NAME=$(echo $GIT_EMAIL | grep -o -E '^[^@]*')
+
+if [ -z "$1" ]; then
+  echo "Missing task number."
+  exit 1
+fi
+
+if [ -z "$2" ]; then
+  TAG=$1
+else
+  NAME=$1
+  TAG=$2
+fi
+
+git checkout -b feature/$NAME/$(date +"%y%m%d")/$TAG

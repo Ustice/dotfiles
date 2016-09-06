@@ -1,14 +1,8 @@
 #!/bin/zsh
+
 BRANCH=$(git symbolic-ref HEAD --short)
-BDATE=$(date "+%y%m%d")
-MESSAGE=$2
-if [ -n "$1" ]; then
-	git push -u origin ${BRANCH}:feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -f
-	if [ -n "$2" ]; then
-		hub pull-request -o -b develop -h feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -m ":pr: ${1}-${BRANCH}: ${MESSAGE}"
-	else
-		hub pull-request -o -b develop -h feature/${GITHUBUN}/${BDATE}-${1}-${BRANCH} -m ":pr: ${1}-${BRANCH}"
-	fi
-else
-	echo "You must supply a JIRA project to use this command."
-fi
+TASK=$(echo $BRANCH | grep -o -E '[^\/]*$')
+MESSAGE=$1
+
+git push -u origin HEAD:${BRANCH}
+hub pull-request -o -b develop -h ${BRANCH} -m "${TASK}: ${MESSAGE}"
