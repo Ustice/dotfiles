@@ -7,7 +7,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git npm z jira)
+plugins=(git npm z jira zsh-autosuggestions)
 
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
@@ -17,7 +17,10 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 # POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 # POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 DEFAULT_USER=$USER
-POWERLEVEL9K_TIME_FORMAT="%D{%Y.%m.%d @ %H:%M:%S}"
+POWERLEVEL9K_TIME_FORMAT="%D{%Y.%m.%d \uE868 %H:%M:%S}"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
 
 export TERM="xterm-256color"
 
