@@ -81,6 +81,7 @@ alias localdev="export NODE_IP_OVERRIDE=''"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 alias bump="npm version minor"
+alias weather="curl -sS http://radar.weather.gov/Conus/Loop/southeast_loop.gif | imgcat && ansiweather"
 
 # Sometimes my keys get removed from SSH, and this reads them.
 ssh-add
