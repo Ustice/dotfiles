@@ -1,0 +1,104 @@
+"*":
+  "api-blueprint-preview": {}
+  "atom-beautify":
+    css:
+      indent_size: 2
+    general:
+      _analyticsUserId: "f69610b0-cbce-4843-ab56-20ce8a166e64"
+    js:
+      break_chained_methods: true
+      end_with_newline: true
+      eval_code: true
+      indent_size: 2
+      jslint_happy: true
+      max_preserve_newlines: 1
+      space_after_anon_function: true
+      unescape_strings: true
+  "atom-pair": {}
+  "autocomplete-plus": {}
+  core:
+    disabledPackages: [
+      "task-list"
+      "linter-scss-lint"
+      "language-javascript-better"
+      "language-javascript-jsx"
+      "jscs-fixer"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "node_modules"
+      "bower_components"
+    ]
+    packagesWithKeymapsDisabled: [
+      "merge-conflicts"
+    ]
+    projectHome: "/repos"
+    themes: [
+      "atom-dark-ui"
+      "monokai-dark"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    fontFamily: "\"Input Mono\""
+    fontSize: 16
+    invisibles: {}
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+  emmet: {}
+  "exception-reporting":
+    userId: "ab917b74-f30b-92b0-6a7d-18111a9a90cb"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "jscs-fixer":
+    esprima: true
+    jscsPath: "/usr/local/bin/jscs"
+  linter:
+    showErrorTabLine: true
+  "linter-htmlhint": {}
+  "linter-jscs":
+    esnext: true
+    executablePath: "/usr/local/bin/jscs"
+    harmony: true
+    onlyConfig: true
+    preset: "jquery"
+  "linter-scss-lint":
+    executablePath: "/usr/bin/scss-lint"
+  "markdown-deluxe": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "markdown-preview-opener": {}
+  "markdown-table-formatter": {}
+  "merge-conflicts":
+    gitPath: "/usr/local/bin/git"
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  pigments:
+    markerType: "square-dot"
+    mergeColorDuplicates: true
+    sortPaletteColors: "by color"
+  react: {}
+  "spell-check": {}
+  tabs:
+    enableVcsColoring: true
+    tabScrolling: true
+    usePreviewTabs: true
+  "todo-show": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+  "white-cursor": {}
+".apib.gfm.html.markdown.source.text":
+  editor:
+    normalizeIndentOnPaste: "true"
+    tabLength: 4
+"source.gfm":
+  editor:
+    softWrap: true
