@@ -82,6 +82,7 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 alias bump="npm version minor"
 alias weather="curl -sS http://radar.weather.gov/Conus/Loop/southeast_loop.gif | imgcat && ansiweather"
+alias forecast="curl -sS http://wttr.in/32601"
 
 # Sometimes my keys get removed from SSH, and this reads them.
 ssh-add
