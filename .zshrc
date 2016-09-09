@@ -100,23 +100,30 @@ export NODE_ENV="local"
 ## JWA
 export NODE_PATH=/usr/local/lib/node_modules
 
-## JENV (Multiple Java environmnent support)
+## Otsuka
+function tp(){
+  echo "Opening TP-$1 in your browser..."
+  open https://otsukadhp.tpondemand.com/entity/$1
+}
+
+### AWS
+export AWS_ACCESS_KEY_ID="PRIVATE"
+export AWS_SECRET_ACCESS_KEY="PRIVATE"
+export AWS_DEFAULT_REGION="PRIVATE"
+export AWS_ES_HOST="PRIVATE"
+
+
+# JENV (Multiple Java environmnent support)
 export JENV_ROOT=/usr/local/var/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-## iTerm 2/3 Shell integrations
+# iTerm 2/3 Shell integrations
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-## Homebrew search support
+# Homebrew search support
 export HOMEBREW_GITHUB_API_TOKEN="PRIVATE"
-
-## AWS
-export AWS_ACCESS_KEY_ID="PRIVATE"
-export AWS_SECRET_ACCESS_KEY="PRIVATE"
-export AWS_DEFAULT_REGION="PRIVATE"
-export AWS_ES_HOST="PRIVATE"
 
 # Load private data
 test -e ~/.zshrc-private && source ~/.zshrc-private
