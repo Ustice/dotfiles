@@ -35,6 +35,8 @@ export PATH="/Users/jkleinberg/bin:$PATH"
 export PATH="/usr/local/Cellar/android-sdk/22.6.2/tools:$PATH"
 # Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+# Ruby gems
+export PATH="/Users/jkleinberg/.gem/ruby/2.0.0/bin:$PATH"
 
 export NOTES="/Users/jkleinberg/Dropbox/.notes"
 
@@ -132,3 +134,6 @@ test -e ~/.zshrc-private && source ~/.zshrc-private
 
 # NPM Tab completion
 source <(npm completion)
+
+# rbenv
+eval "$(rbenv init -)"
