@@ -89,6 +89,24 @@ alias forecast="curl -sS http://wttr.in/32601"
 # Sometimes my keys get removed from SSH, and this reads them.
 ssh-add
 
+function standup(){
+  if [ -z "$1" ]; then
+    mdless $NOTES -P
+  elif [ "$1" == "list" ]; then
+    mdless $NOTES -lP --no-color | grep "^ \S" --color=never
+  else
+    mdless $NOTES -s $1 -P
+  fi
+}
+
+function trim() {
+    local var="$*"
+    var="${var#"${var%%[![:space:]]*}"}"   # remove leading whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"   # remove trailing whitespace characters
+    echo -n "$var"
+}
+
+
 # Project-specific
 ## Spider LMS
 export PGDATA="/usr/local/var/postgres"
