@@ -65,7 +65,7 @@ bindkey '^[^[[D' backward-word
 alias cpwd="pwd | tr '\n' ' ' | pbcopy"
 
 # Git aliases
-alias gs="git status --short $*"
+alias gs="git status --short"
 alias gaa="git add -A :/$*"
 alias gcm="git commit -m $*"
 alias gf="git fetch $*"
