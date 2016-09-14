@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+cat "${PROJECT_ROOT}/package.json" | jq .dependencies

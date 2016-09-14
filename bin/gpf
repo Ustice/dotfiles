@@ -5,4 +5,5 @@ TASK=$(echo $BRANCH | grep -o -E '[^\/]*$')
 MESSAGE=$1
 
 git push -u origin HEAD:${BRANCH}
-hub pull-request -o -b develop -h ${BRANCH} -m "${TASK}: ${MESSAGE}"
+# hub pull-request -o -b develop -h ${BRANCH} -m "${TASK}: ${MESSAGE}"
+hub browse
