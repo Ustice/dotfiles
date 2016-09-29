@@ -1,6 +1,6 @@
 #!/bin/zsh
 GIT_EMAIL=$(git config user.email)
-NAME=$(echo $GIT_EMAIL | grep -o -E '^[^@]*')
+NAME=$(echo $GIT_EMAIL | grep -o -E '^[^@+]*')
 
 if [ -z "$1" ]; then
   echo "Missing task number."
