@@ -22,16 +22,16 @@ fi
 echo "Project root directory: \e[1;37m${PROJECT_ROOT}\e[0m"
 echo "Rebasing onto \e[1;37m${BASE}\e[0m"
 
-git pull --rebase origin $BASE
+if git pull --rebase origin $BASE; then
+  if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'package.json')" ]; then
+    echo
+    echo "Checking for new \e[1;37mNode modules\e[0m."
+    npm install
+  fi
 
-if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'package.json')" ]; then
-  echo
-  echo "Checking for new \e[1;37mNode modules\e[0m."
-  npm install
-fi
-
-if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'bower.json')"]; then
-  echo
-  echo "Checking for new \e[1;37mBower components\e[0m."
-  bower install
+  if [ -n "$(git diff --name-only ${REMOTE_HEAD} HEAD | grep 'bower.json')"]; then
+    echo
+    echo "Checking for new \e[1;37mBower components\e[0m."
+    bower install
+  fi
 fi
