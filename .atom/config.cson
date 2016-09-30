@@ -5,6 +5,7 @@
       indent_size: 2
     general:
       _analyticsUserId: "f69610b0-cbce-4843-ab56-20ce8a166e64"
+      muteAllErrors: true
     js:
       break_chained_methods: true
       end_with_newline: true
@@ -14,6 +15,8 @@
       max_preserve_newlines: 1
       space_after_anon_function: true
       unescape_strings: true
+    json:
+      indent_size: 2
   "atom-pair": {}
   "autocomplete-plus": {}
   core:
@@ -52,8 +55,11 @@
   emmet: {}
   "exception-reporting":
     userId: "ab917b74-f30b-92b0-6a7d-18111a9a90cb"
+  "expand-region": {}
   "git-diff":
     showIconsInEditorGutter: true
+  "git-diff-details":
+    enableSyntaxHighlighting: true
   "jscs-fixer":
     esprima: true
     jscsPath: "/usr/local/bin/jscs"

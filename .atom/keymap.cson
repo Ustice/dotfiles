@@ -34,3 +34,7 @@
 
 'atom-workspace':
   'cmd-alt-m d': 'merge-conflicts:detect'
+
+'atom-text-editor:not([mini])':
+  'ctrl-up': 'expand-region:expand'
+  'ctrl-down': 'expand-region:shrink'
