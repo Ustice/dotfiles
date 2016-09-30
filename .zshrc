@@ -38,10 +38,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Ruby gems
 export PATH="/Users/jkleinberg/.gem/ruby/2.0.0/bin:$PATH"
 
-export NOTES="/Users/jkleinberg/Dropbox/.notes"
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 
 # # Preferred editor for local and remote sessions
@@ -57,7 +53,6 @@ export DYLD_LIBRARY_PATH=/opt/oracle/instantclient
 # Adds ability to move cursor forward and back a word at a time
 bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
-
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
@@ -89,6 +84,9 @@ alias forecast="curl -sS http://wttr.in/32601"
 # Sometimes my keys get removed from SSH, and this reads them.
 ssh-add
 
+# Used for the standup utility
+export NOTES="/Users/jkleinberg/Dropbox/.notes"
+
 function standup(){
   if [ -z "$1" ]; then
     mdless $NOTES -P
@@ -110,7 +108,6 @@ function trim() {
 # Project-specific
 ## Spider LMS
 export PGDATA="/usr/local/var/postgres"
-alias spider="cd /repos/MobSource/MobSource_SpiderLMS_Web"
 export NODE_IP_OVERRIDE='true'
 
 ## MyMonopoly
