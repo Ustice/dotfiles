@@ -68,6 +68,7 @@ alias gf="git fetch $*"
 alias gb="git symbolic-ref HEAD --short"
 alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
+alias cb="git symbolic-ref HEAD --short | tr '\n' ' ' | pbcopy"
 
 alias gdf="vcsh dotfiles"
 
