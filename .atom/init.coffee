@@ -12,3 +12,7 @@
 
 # Workaround needed for jslint
 process.env.PATH = ["/usr/local/bin", process.env.PATH].join(":")
+
+atom.commands.add 'atom-text-editor', 'ustice:open-notes', ->
+  notes = path.join(process.env.HOME, 'Dropbox/.notes')
+  atom.workspace.open(todoList)

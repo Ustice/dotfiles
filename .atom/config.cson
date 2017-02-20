@@ -17,15 +17,20 @@
       unescape_strings: true
     json:
       indent_size: 2
+    less:
+      indent_size: 2
   "atom-pair": {}
   "autocomplete-plus": {}
   core:
     disabledPackages: [
+      "api-blueprint-preview"
       "task-list"
       "linter-scss-lint"
       "language-javascript-better"
       "language-javascript-jsx"
       "jscs-fixer"
+      "whitespace"
+      "atom-pair"
     ]
     ignoredNames: [
       ".git"
@@ -41,16 +46,18 @@
       "merge-conflicts"
     ]
     projectHome: "/repos"
+    telemetryConsent: "limited"
     themes: [
       "atom-dark-ui"
-      "monokai-dark"
+      "monokai"
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "\"Input Mono\""
-    fontSize: 16
+    fontFamily: "\"Input Mono Narrow\""
     invisibles: {}
+    lineHeight: 1.325
     showIndentGuide: true
+    showInvisibles: true
     softWrapAtPreferredLineLength: true
   emmet: {}
   "exception-reporting":
@@ -65,6 +72,8 @@
     jscsPath: "/usr/local/bin/jscs"
   linter:
     showErrorTabLine: true
+  "linter-eslint":
+    globalNodePath: "/usr/local"
   "linter-htmlhint": {}
   "linter-jscs":
     esnext: true
@@ -82,6 +91,7 @@
   "merge-conflicts":
     gitPath: "/usr/local/bin/git"
   minimap:
+    absoluteMode: true
     plugins:
       "git-diff": true
       "git-diffDecorationsZIndex": 0
@@ -96,8 +106,7 @@
     tabScrolling: true
     usePreviewTabs: true
   "todo-show": {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
   "white-cursor": {}

@@ -1,99 +1,294 @@
-/*
- * Your Stylesheet
- *
- * This stylesheet is loaded when Atom starts up and is reloaded automatically
- * when it is changed.
- *
- * If you are unfamiliar with LESS, you can read more about it here:
- * http://www.lesscss.org
- */
+@import "syntax-variables";
+@import "colors";
 
-// Sets editor-wide font.
+@import "packages/file-icons/styles/icons";
+
+@dark: #0d0d0d;
+
+/* Tree view tweaks */
+/* Removes arrow for folders, and adds a line for folder contents. */
+.tree-view {
+  .selected:before {
+    background: hsla(0, 0%, 100%, .2); // show lines underneath
+  }
+
+  .directory {
+    & > .list-item:before {
+      visibility: hidden; // hide arrows
+    }
+
+    @folder-line-padding: 16px;
+    @folder-line-width: 1px;
+    @folder-line-color: darken(@base-background-color, 75%);
+    @folder-line-color-highlight: darken(@base-background-color, 78%);
+
+    .expanded > .header.list-item ~ .entries.list-tree {
+      background: linear-gradient(
+        to right,
+        transparent @folder-line-padding,
+        @folder-line-color @folder-line-padding,
+        @folder-line-color @folder-line-padding + @folder-line-width,
+        transparent @folder-line-padding + @folder-line-width
+      );
+    }
+
+    .expanded > .header.list-item:hover ~ .entries.list-tree {
+      background: linear-gradient(
+        to right,
+        transparent @folder-line-padding,
+        @folder-line-color-highlight @folder-line-padding,
+        @folder-line-color-highlight @folder-line-padding + @folder-line-width,
+        transparent @folder-line-padding + @folder-line-width
+      );
+    }
+  }
+}
+
+.tree-view [is="tree-view-directory"].collapsed > .list-item > .icon-file-directory::before {
+  .fa;
+  content: "\f07b";
+  font-size: 1.25em;
+}
+
+.tree-view [is="tree-view-directory"].expanded > .list-item > .icon-file-directory::before {
+  .fa;
+  content: "\f07c";
+  font-size: 1.25em;
+}
+
+/* Deprecation Cop */
+status-bar {
+  .deprecation-cop-status {
+    color: @orange;
+    transition: color 0.5s;
+
+    &:hover {
+      color: lighten(@orange, 10%);
+    }
+
+    > .icon.icon-alert::before {
+      top: -1px;
+    }
+  }
+}
+
+.tab .icon.icon-alert::before {
+    color: @orange;
+}
+
+/* Make the linter messages fade except when hovering */
 atom-text-editor {
-    font-family: "Input Mono Narrow";
-    font-weight: 100;
-    line-height: 1.325em;
+  #linter-inline {
+    opacity: 0.2;
+  }
+
+  #linter-inline:hover {
+    opacity: 1.0;
+  }
 }
 
-:host,
-atom-text-editor::shadow {
-    // Highlights the row that the cursor is on.
-    .line-number.cursor-line {
-        color: #272727;
-        background-color: rgb(248, 248, 242);
-
-        // fix for the git icon disrupting the width of the background;
-        min-width: 100%;
-        width: inherit !important;
-        &.cursor-line-no-selection {
-            background-color: fade(rgb(248, 248, 242), 70%);
-        }
-    }
-
-    // Highlighted text
-    .selection .region {
-        background-color: fade(rgb(248, 248, 242), 20%);
-    }
-
-    .gutter.git-diff-icon .line-number{
-        // Makes the git icon for adds a litle brighter
-        &.git-line-added:before {
-            color: #0f0;
-        }
-
-        // Moves the git removed icon to the proper position (it was moved down for some reason)
-        &.git-line-removed:before {
-            top: 0;
-        }
-
-        // Adds a black outline to the git icon so that it looks nicer against my light background on selected row,
-        // and makes the icon just a tad bigger to ease visibility.
-        &.git-line-modified:before,
-        &.git-line-added:before,
-        &.git-line-removed:before {
-            text-shadow: 0 0 1px #000;
-            font-size: 1.4rem; // Anything larger than this will cause alignment issues with the line number.
-            text-align: center;
-        }
-    }
-
-    .linter-highlight .icon-right
-    {
-        opacity: 1.0;
-
-        &::before {
-            color: #ffa500 !important;
-            font-size: 1.4rem;
-            left: -3px;
-            opacity: 1.0;
-            position: relative;
-            text-shadow: 0 0 1px #000;
-            top: -1px;
-        }
-    }
-
-    // Make the bookmark icon a little brighter
-    .gutter .line-number.bookmarked {
-      .icon-right {
-        opactiy: 0.8;
-      }
-
-      .icon-right:hover {
-        opacity: 1.0;
-      }
-
-      .icon-right:before {
-        color: #66d9ef;
-
-      }
-    }
-
-    // Make the bookmark icon on the active line easier to see
-    .gutter .line-number.bookmarked.cursor-line {
-      .icon-right:before {
-        color: #ffa500;
-        text-shadow: 0 0 2px #000;
-      }
-    }
-
+/* show invisibles only in selection */
+atom-text-editor {
+  .invisible-character {
+    color: @dark;
+  }
 }
+
+/* align the pigments color markers better */
+atom-text-editor {
+  pigments-markers .dot {
+    transform: translateX(4px);
+  }
+}
+
+atom-text-editor {
+  /* show a dotted line underneath folded lines */
+  .fold-marker {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-bottom: 1px dashed @syntax-selection-color;
+    }
+  }
+
+  .line.cursor-line .fold-marker {
+    &::after {
+      color: @syntax-text-color;
+    }
+
+    &::before {
+      border-color: @syntax-text-color;
+    }
+  }
+}
+
+/* Sets editor-wide font. */
+atom-text-editor {
+  // font-family: "Input Mono Narrow";
+  font-weight: 100;
+  // line-height: 1.325em;
+}
+
+/* Makes the cursor pulse instead of blink */
+atom-text-editor {
+  .cursor {
+    transition: opacity 0.5s;
+  }
+}
+
+/* Makes the bracket matcher highlight more noticeable */
+atom-text-editor {
+  @glow-color: fade(@orange, 60%);
+  @glow-on: fade(@glow-color, 77%);
+  @glow-off: fade(@glow-color, 0%);
+  @glow-radius: 30px;
+  @glow-spread: 10px;
+  @pulse-speed: 2s;
+
+  @keyframes glowing-pulse {
+    0% {
+      box-shadow: 0 0 @glow-radius @glow-spread @glow-color;
+      background-color: @glow-on;
+
+    }
+
+    50% {
+      box-shadow: 0 0 0 0 @glow-off;
+      background-color: @glow-off;
+    }
+
+    100% {
+      box-shadow: 0 0 @glow-radius @glow-spread @glow-color;
+      background-color: @glow-on;
+    }
+  }
+
+  .bracket-matcher .region {
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 @glow-radius @glow-spread @glow-color;
+    background-color: @glow-on;
+    animation: glowing-pulse @pulse-speed infinite;
+  }
+}
+
+/* Highlights trailing whitespace except on the cursor line */
+atom-text-editor {
+  div.line:not(.cursor-line) {
+    .trailing-whitespace {
+      background-color: fade(@background-color-error, 50%);
+      color: contrast(@background-color-error);
+    }
+  }
+}
+
+.theme-atom-dark-ui {
+  .advanced-open-file { font-size: 16px; }
+  .git-Panel { font-size: 16px; }
+  .status-bar { font-size: 16px; }
+  .tab-bar { font-size: 14px; }
+  // .tree-view { font-size: 16px; }
+}
+
+/* Theme tweaks */
+.theme-monokai atom-text-editor {
+  background-color: @dark;
+
+  .gutter {
+    background-color: lighten(@dark, 5%);
+
+    .custom-decorations {
+      background-color: @dark !important;
+    }
+  }
+
+  .advanced-open-file { font-size: 16px; }
+  .git-Panel { font-size: 16px; }
+  .status-bar { font-size: 16px; }
+  .tab-bar { font-size: 16px; }
+
+  .tree-view {
+    font-size: 16px;
+  }
+  // Highlights the row that the cursor is on.
+  .line-number.cursor-line {
+    color: #272727;
+    background-color: rgb(248, 248, 242);
+    // fix for the git icon disrupting the width of the background;
+    min-width: 100%;
+    width: inherit !important;
+
+    &.cursor-line-no-selection {
+      background-color: fade(rgb(248, 248, 242), 70%);
+    }
+  }
+  // Highlighted text
+  .selection .region {
+    background-color: fade(rgb(248, 248, 242), 20%);
+  }
+
+  .gutter.git-diff-icon .line-number {
+    // Makes the git icon for adds a litle brighter
+    &.git-line-added:before {
+      color: @syntax-color-added;
+    }
+
+    &.git-line-modified:before {
+      color: @orange;
+    }
+
+    &.git-line-removed:before {
+      top: 0; // Moves the git removed icon to the proper position (it was moved down for some reason)
+      color: @syntax-color-removed;
+    }
+
+    // Adds a black outline to the git icon so that it looks nicer against my light background on selected row,
+    // and makes the icon just a tad bigger to ease visibility.
+    &.git-line-added:before,
+    &.git-line-modified:before,
+    &.git-line-removed:before {
+      text-shadow: 0 0 2px fade(#000, 80%);
+      font-size: 1.2rem; // Anything larger than this will cause alignment issues with the line number.
+      text-align: center;
+    }
+  }
+
+  .linter-highlight .icon-right {
+    opacity: 1.0;
+
+    &::before {
+      color: #ffa500 !important;
+      font-size: 1.4rem;
+      left: -3px;
+      opacity: 1.0;
+      position: relative;
+      text-shadow: 0 0 1px #000;
+      top: -1px;
+    }
+  }
+  // Make the bookmark icon a little brighter
+  .gutter .line-number.bookmarked {
+    .icon-right {
+      opactiy: 0.8;
+    }
+
+    .icon-right:hover {
+      opacity: 1.0;
+    }
+
+    .icon-right:before {
+      color: #66d9ef;
+    }
+  }
+  // Make the bookmark icon on the active line easier to see
+  .gutter .line-number.bookmarked.cursor-line {
+    .icon-right:before {
+      color: @orange;
+      text-shadow: 0 0 2px #000;
+    }
+  }
+}
+
