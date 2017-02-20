@@ -12,7 +12,7 @@ plugins=(git npm z jira zsh-autosuggestions)
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery node_version ip time )
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery node_version ip custom_wifi_signal time )
 POWERLEVEL9K_STATUS_VERBOSE=false
 # POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 # POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
@@ -22,6 +22,30 @@ POWERLEVEL9K_TIME_FORMAT="%D{\uf073 %Y.%m.%d \uf017 %H:%M:%S}"
 POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="235"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="white"
+
+zsh_wifi_signal(){
+  local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I) 
+  local airport=$(echo $output | grep 'AirPort' | awk -F': ' '{print $2}')
+
+  if [ "$airport" = "Off" ]; then
+    local color='%F{yellow}'
+    echo -n "%{$color%}Wifi Off"
+  else
+    local ssid=$(echo $output | grep ' SSID' | awk -F': ' '{print $2}')
+    local speed=$(echo $output | grep 'lastTxRate' | awk -F': ' '{print $2}')
+    local color='%F{yellow}'
+
+    [[ $speed -gt 100 ]] && color='%F{green}'
+    [[ $speed -lt 50 ]] && color='%F{red}'
+
+    # echo -n "%{$color%}$ssid $speed Mb/s%{%f%}" # removed char not in my PowerLine font 
+    echo -n "%{$color%}$ssid%{%f%}" # removed char not in my PowerLine font 
+  fi
+}
 
 export TERM="xterm-256color"
 
@@ -37,7 +61,9 @@ export PATH="/usr/local/Cellar/android-sdk/22.6.2/tools:$PATH"
 # Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 # Ruby gems
-export PATH="/Users/jkleinberg/.gem/ruby/2.0.0/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.3.0:$PATH"
+# Chef gems
+export PATH="/Users/jkleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
 
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 
@@ -58,7 +84,7 @@ bindkey '^[^[[D' backward-word
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Convienience commands
-alias cpwd="pwd | tr '\n' ' ' | pbcopy"
+alias cpwd="pwd | tr -d '\n' | pbcopy"
 
 # Git aliases
 alias gs="git status --short"
@@ -68,7 +94,7 @@ alias gf="git fetch $*"
 alias gb="git symbolic-ref HEAD --short"
 alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
-alias cb="git symbolic-ref HEAD --short | tr '\n' ' ' | pbcopy"
+alias cb="gb | tr -d '\n' | pbcopy"
 
 alias gdf="vcsh dotfiles"
 
@@ -80,7 +106,7 @@ alias localdev="export NODE_IP_OVERRIDE=''"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 alias bump="npm version minor"
-alias weather="curl -sS http://radar.weather.gov/Conus/Loop/southeast_loop.gif | imgcat && ansiweather"
+alias weather="curl -sS https://radar.weather.gov/Conus/Loop/southeast_loop.gif | imgcat && ansiweather"
 alias forecast="curl -sS http://wttr.in/32601"
 
 # Sometimes my keys get removed from SSH, and this reads them.
