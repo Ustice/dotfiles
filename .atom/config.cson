@@ -31,6 +31,8 @@
       "jscs-fixer"
       "whitespace"
       "atom-pair"
+      "atom-typescript"
+      "bookmarks"
     ]
     ignoredNames: [
       ".git"
@@ -83,6 +85,8 @@
     preset: "jquery"
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
+  "linter-ui-default":
+    showPanel: true
   "markdown-deluxe": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -112,8 +116,12 @@
   "white-cursor": {}
 ".apib.gfm.html.markdown.source.text":
   editor:
+    autoIndentOnPaste: false
     normalizeIndentOnPaste: "true"
     tabLength: 4
+".gfm.html.markdown.mson.source.text":
+  editor:
+    autoIndentOnPaste: false
 "source.gfm":
   editor:
     softWrap: true
