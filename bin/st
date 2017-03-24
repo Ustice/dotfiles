@@ -9,9 +9,10 @@ fi
 
 if [ -z "$2" ]; then
   TAG=$1
+  TASK_TYPE="feature"
 else
-  NAME=$1
+  TASK_TYPE=$1
   TAG=$2
 fi
 
-git checkout -b feature/$NAME/$(date +"%y%m%d")/$TAG
+git checkout -b $TASK_TYPE/$NAME/$(date +"%y%m%d")/$TAG

@@ -95,6 +95,7 @@ alias gb="git symbolic-ref HEAD --short"
 alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
 alias cb="gb | tr -d '\n' | pbcopy"
+alias copy="tr -d '\n' | pbcopy"
 
 alias gdf="vcsh dotfiles"
 
@@ -146,12 +147,6 @@ export NODE_ENV="local"
 
 ## JWA
 export NODE_PATH=/usr/local/lib/node_modules
-
-## Otsuka
-function tp(){
-  echo "Opening TP-$1 in your browser..."
-  open https://otsukadhp.tpondemand.com/entity/$1
-}
 
 ### AWS
 export AWS_ACCESS_KEY_ID="PRIVATE"
