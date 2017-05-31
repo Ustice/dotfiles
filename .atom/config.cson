@@ -72,8 +72,7 @@
   "jscs-fixer":
     esprima: true
     jscsPath: "/usr/local/bin/jscs"
-  linter:
-    showErrorTabLine: true
+  linter: {}
   "linter-eslint":
     globalNodePath: "/usr/local"
   "linter-htmlhint": {}
@@ -86,7 +85,7 @@
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 81
   "markdown-deluxe": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -110,6 +109,7 @@
     tabScrolling: true
     usePreviewTabs: true
   "todo-show": {}
+  "toggle-quotes": {}
   "tree-view": {}
   welcome:
     showOnStartup: false

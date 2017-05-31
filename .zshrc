@@ -143,7 +143,7 @@ export NODE_IP_OVERRIDE='true'
 export MM_LOCAL_DEV='true'
 
 ## Life-Map
-export NODE_ENV="local"
+export NODE_ENV="development"
 
 ## JWA
 export NODE_PATH=/usr/local/lib/node_modules
