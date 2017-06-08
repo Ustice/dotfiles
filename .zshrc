@@ -96,6 +96,8 @@ alias gb="git symbolic-ref HEAD --short"
 alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
 alias cb="gb | tr -d '\n' | pbcopy"
+alias prune="git branch | grep "/" | xargs git branch -D"
+
 alias copy="tr -d '\n' | pbcopy"
 
 alias gdf="vcsh dotfiles"
