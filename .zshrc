@@ -65,6 +65,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.3.0:$PATH"
 # Chef gems
 export PATH="/Users/jkleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
+# Adds Python (AWS CLI)
+export PATH="~/Library/Python/3.6/bin:$PATH"
 
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 
