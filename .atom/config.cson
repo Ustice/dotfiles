@@ -22,6 +22,7 @@
   "atom-pair": {}
   "autocomplete-plus": {}
   core:
+    closeDeletedFileTabs: true
     disabledPackages: [
       "api-blueprint-preview"
       "task-list"
