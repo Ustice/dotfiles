@@ -8,6 +8,8 @@
 /* Tree view tweaks */
 /* Removes arrow for folders, and adds a line for folder contents. */
 .tree-view {
+  background-color: lighten(@dark, 10%);
+
   .selected:before {
     background: hsla(0, 0%, 100%, .2); // show lines underneath
   }
@@ -128,9 +130,7 @@ atom-text-editor {
 
 /* Sets editor-wide font. */
 atom-text-editor {
-  // font-family: "Input Mono Narrow";
   font-weight: 100;
-  // line-height: 1.325em;
 }
 
 /* Makes the cursor pulse instead of blink */
@@ -262,6 +262,7 @@ atom-text-editor {
       top: -1px;
     }
   }
+
   // Make the bookmark icon a little brighter
   .gutter .line-number.bookmarked {
     .icon-right {
@@ -287,4 +288,22 @@ atom-text-editor {
 
 .markdown-preview[data-use-github-style] atom-text-editor {
   padding-bottom: 0;
+}
+
+// Fixes visual bug due to linter where a bar would be over the find/replace
+// interface
+.atom-dock-inner:not(.atom-dock-open) {
+  z-index: inherit;
+}
+
+// Formatting for indent-guide-improved
+.indent-guide-improved {
+  background-color: fadeout(@brown-gray, 50%);
+  &.indent-guide-stack {
+    background-color: faceout(@gray, 50%);
+    &.indent-guide-active {
+      background-color: fadeout(@orange, 50%);
+      box-shadow: 0 0 10px 1px fadeout(@orange, 50%);
+    }
+  }
 }

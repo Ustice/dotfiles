@@ -38,3 +38,7 @@
 'atom-text-editor:not([mini])':
   'ctrl-up': 'expand-region:expand'
   'ctrl-down': 'expand-region:shrink'
+  'alt-down':       'indentation-jumper:down'
+  'alt-up':         'indentation-jumper:up'
+  'alt-shift-down': 'indentation-jumper:select-down'
+  'alt-shift-up':   'indentation-jumper:select-up'
