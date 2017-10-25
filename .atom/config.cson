@@ -44,6 +44,7 @@
       "Thumbs.db"
       "node_modules"
       "bower_components"
+      ".git"
     ]
     packagesWithKeymapsDisabled: [
       "merge-conflicts"
@@ -58,8 +59,7 @@
     backUpBeforeSaving: true
     fontFamily: "\"Input Mono Narrow\""
     invisibles: {}
-    lineHeight: 1.325
-    showIndentGuide: true
+    lineHeight: 1.375
     showInvisibles: true
     softWrapAtPreferredLineLength: true
   emmet: {}
@@ -75,6 +75,7 @@
     jscsPath: "/usr/local/bin/jscs"
   linter: {}
   "linter-eslint":
+    fixOnSave: true
     globalNodePath: "/usr/local"
   "linter-htmlhint": {}
   "linter-jscs":
@@ -100,7 +101,6 @@
       "git-diff": true
       "git-diffDecorationsZIndex": 0
   pigments:
-    markerType: "square-dot"
     mergeColorDuplicates: true
     sortPaletteColors: "by color"
   react: {}
@@ -111,7 +111,9 @@
     usePreviewTabs: true
   "todo-show": {}
   "toggle-quotes": {}
-  "tree-view": {}
+  "tree-view":
+    alwaysOpenExisting: true
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
   "white-cursor": {}

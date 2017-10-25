@@ -154,10 +154,10 @@ export NODE_ENV="development"
 export NODE_PATH=/usr/local/lib/node_modules
 
 ### AWS
-export AWS_ACCESS_KEY_ID="PRIVATE"
-export AWS_SECRET_ACCESS_KEY="PRIVATE"
-export AWS_DEFAULT_REGION="PRIVATE"
-export AWS_ES_HOST="PRIVATE"
+# export AWS_ACCESS_KEY_ID="PRIVATE"
+# export AWS_SECRET_ACCESS_KEY="PRIVATE"
+# export AWS_DEFAULT_REGION="PRIVATE"
+# export AWS_ES_HOST="PRIVATE"
 
 
 # JENV (Multiple Java environmnent support)
@@ -180,3 +180,5 @@ source <(npm completion)
 
 # rbenv
 eval "$(rbenv init -)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
