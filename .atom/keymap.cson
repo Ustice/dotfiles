@@ -25,20 +25,20 @@
 # https://github.com/bevry/cson#what-is-cson
 
 'atom-text-editor.conflicted':
-  'cmd-alt-m down': 'merge-conflicts:next-unresolved'
-  'cmd-alt-m up': 'merge-conflicts:previous-unresolved'
+  'cmd-alt-m down':  'merge-conflicts:next-unresolved'
+  'cmd-alt-m up':    'merge-conflicts:previous-unresolved'
   'cmd-alt-m enter': 'merge-conflicts:accept-current'
-  'cmd-alt-m r': 'merge-conflicts:revert-current'
-  'cmd-alt-m 1': 'merge-conflicts:accept-ours'
-  'cmd-alt-m 2': 'merge-conflicts:accept-theirs'
+  'cmd-alt-m r':     'merge-conflicts:revert-current'
+  'cmd-alt-m 1':     'merge-conflicts:accept-ours'
+  'cmd-alt-m 2':     'merge-conflicts:accept-theirs'
 
 'atom-workspace':
-  'cmd-alt-m d': 'merge-conflicts:detect'
+  'cmd-alt-m d':     'merge-conflicts:detect'
 
 'atom-text-editor:not([mini])':
-  'ctrl-up': 'expand-region:expand'
-  'ctrl-down': 'expand-region:shrink'
-  'alt-down':       'indentation-jumper:down'
-  'alt-up':         'indentation-jumper:up'
-  'alt-shift-down': 'indentation-jumper:select-down'
-  'alt-shift-up':   'indentation-jumper:select-up'
+  'ctrl-up':         'expand-region:expand'
+  'ctrl-down':       'expand-region:shrink'
+  'alt-down':        'indentation-jumper:down'
+  'alt-up':          'indentation-jumper:up'
+  'alt-shift-down':  'indentation-jumper:select-down'
+  'alt-shift-up':    'indentation-jumper:select-up'

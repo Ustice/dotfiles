@@ -298,12 +298,22 @@ atom-text-editor {
 
 // Formatting for indent-guide-improved
 .indent-guide-improved {
-  background-color: fadeout(@brown-gray, 50%);
+  @color-off: fadeout(@brown-gray, 50%);
+  @color-ancestor: mix(@brown-gray, @orange, 75%);
+  @color-active: fadeout(@orange, 50%);
+  @light-spread: 10px;
+  @transition-speed: 0.5s;
+
+  background-color: @color-off;
+  box-shadow: 0 0 0 0 @color-off;
+  transition: box-shadow 0.5s, background-color 0.5s;
   &.indent-guide-stack {
-    background-color: faceout(@gray, 50%);
+    background-color: @color-ancestor;
+    box-shadow: 0 0 @light-spread 1px fadeout(@color-ancestor, 25%);
     &.indent-guide-active {
-      background-color: fadeout(@orange, 50%);
-      box-shadow: 0 0 10px 1px fadeout(@orange, 50%);
+      background-color: @color-active;
+      box-shadow: 0 0 @light-spread 1px fadeout(@orange, 25%);
+      transition: box-shadow (@transition-speed * 1.75), background-color (@transition-speed * 1.75);
     }
   }
 }
