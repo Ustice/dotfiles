@@ -104,6 +104,8 @@
   pigments:
     mergeColorDuplicates: true
     sortPaletteColors: "by color"
+  "project-view":
+    displayPath: false
   react: {}
   "spell-check": {}
   tabs:
