@@ -67,7 +67,10 @@ export PATH="/usr/local/lib/ruby/gems/2.3.0:$PATH"
 export PATH="/Users/jkleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
 # Adds Python (AWS CLI)
 export PATH="~/Library/Python/3.6/bin:$PATH"
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
 
+# Android SDK
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 
 # # Preferred editor for local and remote sessions
@@ -138,6 +141,8 @@ function trim() {
     echo -n "$var"
 }
 
+## Node Development Environment
+export NODE_ENV="development"
 
 # Project-specific
 ## Spider LMS
@@ -146,9 +151,6 @@ export NODE_IP_OVERRIDE='true'
 
 ## MyMonopoly
 export MM_LOCAL_DEV='true'
-
-## Life-Map
-export NODE_ENV="development"
 
 ## JWA
 export NODE_PATH=/usr/local/lib/node_modules
@@ -180,5 +182,3 @@ source <(npm completion)
 
 # rbenv
 eval "$(rbenv init -)"
-
-export PATH="$HOME/.yarn/bin:$PATH"

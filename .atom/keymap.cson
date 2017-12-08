@@ -24,10 +24,13 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+'.platform-darwin':
+  'cmd-|': 'unset!'
+
 'atom-text-editor.conflicted':
   'cmd-alt-m down':  'merge-conflicts:next-unresolved'
   'cmd-alt-m up':    'merge-conflicts:previous-unresolved'
-  'cmd-alt-m enter': 'merge-conflicts:accept-current'
+  'cmd-alt-m enter': 'merge-conflicts:accept-current' 
   'cmd-alt-m r':     'merge-conflicts:revert-current'
   'cmd-alt-m 1':     'merge-conflicts:accept-ours'
   'cmd-alt-m 2':     'merge-conflicts:accept-theirs'
@@ -40,5 +43,8 @@
   'ctrl-down':       'expand-region:shrink'
   'alt-down':        'indentation-jumper:down'
   'alt-up':          'indentation-jumper:up'
-  'alt-shift-down':  'indentation-jumper:select-down'
-  'alt-shift-up':    'indentation-jumper:select-up'
+  # 'alt-shift-down':  'indentation-jumper:select-down'
+  # 'alt-shift-up':    'indentation-jumper:select-up'
+  'alt-shift-up': 'expand-region:expand'
+  'alt-shift-down': 'expand-region:shrink'
+  'cmd-|': 'github:toggle-git-tab'
