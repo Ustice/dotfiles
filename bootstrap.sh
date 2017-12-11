@@ -6,6 +6,7 @@
 # fi
 
 # Display commands as they are run
+PS4='$LINENO: '
 set -x
 
 # helpers
