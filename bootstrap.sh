@@ -36,7 +36,7 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 
 echo "Installing terminal utilities."
-brew install
+brew install \
   mongodb \
   node \
   vcsh \
