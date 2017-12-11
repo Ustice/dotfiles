@@ -7,7 +7,7 @@
 
 # Display commands as they are run
 PS4='$LINENO: '
-set -x
+set -ex
 
 echo "Install starting. You may be asked for your password (for sudo)."
 
@@ -18,7 +18,7 @@ REPO_ROOT="/repo" # repos
 BINARIES="~/bin" # binaries
 
 # Create repository directory
-sudo mkdir $REPO_ROOT
+sudo mkdir -p $REPO_ROOT
 chown $USERNAME $REPO_ROOT
 
 # Accept XCode license
