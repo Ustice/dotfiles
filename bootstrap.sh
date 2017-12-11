@@ -5,6 +5,9 @@
 #     exit
 # fi
 
+# Display commands as they are run
+set -x
+
 # helpers
 function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
 function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
