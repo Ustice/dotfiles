@@ -82,9 +82,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 while [ ! -d "~/Dropbox/.ssh" ]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
-    read -rsn 1 =p "Press i to load the Dropbox installation site, and any other key to continue." SHOULD_INSTALL_DROPBOX
+    read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_INSTALL_DROPBOX
 
-    if [ $SHOULD_INSTALL_DROPBOX = "i" ]; then
+    if [ $SHOULD_INSTALL_DROPBOX -eq 0 ]; then
         open "https://www.dropbox.com/install"
     fi
 done
