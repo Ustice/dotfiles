@@ -30,7 +30,13 @@ fi
 
 # Install Homebrew
 echo "Installing Homebrew."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which -s brew
+if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    brew update
+fi
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
