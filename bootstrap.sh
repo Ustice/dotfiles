@@ -9,12 +9,7 @@
 PS4='$LINENO: '
 set -x
 
-# helpers
-function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
-function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
-function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
-
-echo_ok "Install starting. You may be asked for your password (for sudo)."
+echo "Install starting. You may be asked for your password (for sudo)."
 
 USERNAME=$(logname) # Username (whoami would return 'root')
 
@@ -27,23 +22,23 @@ sudo mkdir $REPO_ROOT
 chown $USERNAME $REPO_ROOT
 
 # Accept XCode license
-echo_ok "Accept the XCode License by pressing Q then accept."
+echo "Accept the XCode License by pressing Q then accept."
 sudo xcodebuild -license
 
 # Install Homebrew
-echo_ok "Installing Homebrew."
+echo "Installing Homebrew."
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
 
-echo_ok "Installing terminal utilities."
+echo "Installing terminal utilities."
 brew install
   mongodb \
   node \
   vcsh \
 
-echo_ok "Installing applications."
+echo "Installing applications."
 brew cask install \
   atom \
   bettertouchtool \
@@ -86,12 +81,12 @@ while [ ! -d "~/Dropbox/.ssh" ]; do
 done
 
 # Restore ssh keys
-echo_ok "Copying ssh keys"
+echo "Copying ssh keys"
 sudo cp -r ~/Dropbox/bootstrap/.ssh ~/.ssh
 cp -r ~/Dropbox/bootstrap/.zshrc-private
 
 # Restoring Dot Files
-echo_ok "Installing dotiles"
+echo "Installing dotiles"
 cd $REPO_ROOT
 git clone git@github.com:Ustice/dotfiles.git
 cp .atom ~
