@@ -16,6 +16,7 @@ USERNAME=$(logname) # Username (whoami would return 'root')
 # Directories
 REPO_ROOT="/repo" # repos
 BINARIES="~/bin" # binaries
+SSH_KEYS="~/Dropbox/.ssh" # ssh key backup
 
 # Create repository directory
 sudo mkdir -p $REPO_ROOT
@@ -77,9 +78,8 @@ sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 # PowerLevel9K theme
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Make sure that Dropbox is installed
-# Installation: https://www.dropbox.com/install
-while [ ! -d "~/Dropbox/.ssh" ]; do
+# Make sure that Dropbox is installed and ready
+while [ ! -d "$SSH_KEYS" ]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
     read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_INSTALL_DROPBOX
