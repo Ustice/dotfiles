@@ -18,10 +18,6 @@ USERNAME=$(logname) # Username (whoami would return 'root')
 REPO_ROOT="/repo" # repos
 BINARIES="~/bin" # binaries
 
-# Create Installation directory
-mkdir -p ~/Downloads/bootstrap
-chown $USERNAME
-
 # Create repository directory
 sudo mkdir $REPO_ROOT
 chown $USERNAME $REPO_ROOT
