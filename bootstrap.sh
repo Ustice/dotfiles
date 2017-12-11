@@ -23,6 +23,7 @@ chown $USERNAME $REPO_ROOT
 
 # Accept XCode license
 echo "Accept the XCode License by pressing Q then accept."
+xcode-select --install
 sudo xcodebuild -license
 
 # Install Homebrew
