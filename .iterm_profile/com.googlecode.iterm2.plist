@@ -227,7 +227,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/iterm_profile</string>
+	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -283,7 +283,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 618 620 392 0 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-904 404 796 473 -1920 195 1920 1057 </string>
+	<string>1016 197 796 473 0 0 1920 1177 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>2075 675 592 584 1920 202 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1326,7 +1326,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/jkleinberg/iterm_profile</string>
+	<string>/Users/jkleinberg/.iterm_profile</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnClose</key>
@@ -1348,7 +1348,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-05T15:30:32Z</date>
+	<date>2017-12-08T22:05:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

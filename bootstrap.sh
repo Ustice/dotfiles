@@ -99,3 +99,7 @@ cp bin ~
 cp .zshrc ~
 
 
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/.iterm_profile"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
