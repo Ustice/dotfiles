@@ -19,7 +19,7 @@ BINARIES="~/bin" # binaries
 
 # Create repository directory
 sudo mkdir -p $REPO_ROOT
-chown $USERNAME $REPO_ROOT
+sudo chown $USERNAME $REPO_ROOT
 
 # Accept XCode license
 echo "Accept the XCode License by pressing Q then accept."
