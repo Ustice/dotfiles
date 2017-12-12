@@ -82,11 +82,13 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 while [ ! -d "$SSH_KEYS" ]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
-    read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_INSTALL_DROPBOX
+    read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_OPEN_DROPBOX
 
-    if [[ $SHOULD_INSTALL_DROPBOX == "" ]]; then
-        open "https://www.dropbox.com/install"
+    if [[ $SHOULD_OPEN_DROPBOX == "" ]]; then
+        open /Applications/Dropbox.app
     fi
+
+    echo "does this exist? > $SSH_KEYS"
 done
 
 # Restore ssh keys
