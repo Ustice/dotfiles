@@ -84,7 +84,7 @@ while [ ! -d "$SSH_KEYS" ]; do
     echo "Please sign in to Dropbox, and allow it to sync to continue."
     read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_INSTALL_DROPBOX
 
-    if [ $SHOULD_INSTALL_DROPBOX -eq 0 ]; then
+    if [[ $SHOULD_INSTALL_DROPBOX == "" ]]; then
         open "https://www.dropbox.com/install"
     fi
 done
