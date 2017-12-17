@@ -16,7 +16,7 @@ USERNAME=$(logname) # Username (whoami would return 'root')
 # Directories
 REPO_ROOT="/repo" # repos
 BINARIES="~/bin" # binaries
-SSH_KEYS="~/Dropbox/.ssh" # ssh key backup
+SSH_KEYS="~/Dropbox/.ssh/" # ssh key backup
 
 # Create repository directory
 sudo mkdir -p $REPO_ROOT
