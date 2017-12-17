@@ -16,7 +16,7 @@ USERNAME=$(logname) # Username (whoami would return 'root')
 # Directories
 REPO_ROOT="/repo" # repos
 BINARIES="~/bin" # binaries
-SSH_KEYS="~/Dropbox/.ssh/" # ssh key backup
+SSH_KEYS="~/Dropbox/.ssh" # ssh key backup
 
 # Create repository directory
 sudo mkdir -p $REPO_ROOT
@@ -79,7 +79,7 @@ sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Make sure that Dropbox is installed and ready
-while [[ ! -d $SSH_KEYS ]]; do
+until [ -f "$SSH_KEYS/id_rsa" ]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
     read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_OPEN_DROPBOX
@@ -88,7 +88,7 @@ while [[ ! -d $SSH_KEYS ]]; do
         open /Applications/Dropbox.app
     fi
 
-    echo "does this exist? - $SSH_KEYS"
+    sleep 5
 done
 
 # Restore ssh keys
