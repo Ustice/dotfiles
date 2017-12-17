@@ -78,13 +78,15 @@ sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 # PowerLevel9K theme
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+IFS=''
+
 # Make sure that Dropbox is installed and ready
-until [ -e "$SSH_KEYS/id_rsa" ]; do
+until [[ -e ~/Dropbox/.ssh/id_rsa ]]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
-    read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_OPEN_DROPBOX
+    read -rsn 1 -t 1 -p "Press Enter to open Dropbox, and any other key to continue." KEY_PRESSED
 
-    if [[ $SHOULD_OPEN_DROPBOX == "" ]]; then
+    if [[ "$KEY_PRESSED" == $'\x0a' ]]; then
         open /Applications/Dropbox.app
     fi
 
