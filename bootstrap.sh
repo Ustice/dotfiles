@@ -79,7 +79,7 @@ sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Make sure that Dropbox is installed and ready
-while [[ ! -d "$SSH_KEYS" ]]; do
+while [[ ! -d $SSH_KEYS ]]; do
     echo "I'm unable to find the .ssh directory in your Dropbox directory."
     echo "Please sign in to Dropbox, and allow it to sync to continue."
     read -rsn 1 -p "Press Enter to open Dropbox, and any other key to continue." SHOULD_OPEN_DROPBOX
