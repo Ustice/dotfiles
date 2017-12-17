@@ -95,15 +95,15 @@ done
 
 # Restore ssh keys
 echo "Copying ssh keys"
-sudo cp ~/Dropbox/bootstrap/.ssh ~
-cp  ~/Dropbox/bootstrap/.zshrc-private ~
+sudo cp -R ~/Dropbox/bootstrap/.ssh ~/.ssh
+cp ~/Dropbox/bootstrap/.zshrc-private ~
 
 # Restoring Dot Files
 echo "Installing dotiles"
 cd $REPO_ROOT
 git clone git@github.com:Ustice/dotfiles.git
 cd dotfiles
-cp .atom ~
+cp -R .atom ~/.atom
 cp bin ~
 cp .zshrc ~
 
