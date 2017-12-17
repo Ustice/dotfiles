@@ -44,8 +44,10 @@ brew tap caskroom/versions
 
 echo "Installing terminal utilities."
 brew install \
+  jenv \
   mongodb \
   node \
+  rbenv \
   vcsh \
 
 echo "Installing applications."
@@ -106,6 +108,9 @@ cd dotfiles
 cp -R .atom ~
 cp -R bin ~
 cp .zshrc ~
+
+echo "Installing PowerLevel9k"
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 source ~/.zshrc
 
