@@ -95,17 +95,19 @@ done
 
 # Restore ssh keys
 echo "Copying ssh keys"
-sudo cp -r ~/Dropbox/bootstrap/.ssh ~/.ssh
-cp -r ~/Dropbox/bootstrap/.zshrc-private
+sudo cp ~/Dropbox/bootstrap/.ssh ~
+cp  ~/Dropbox/bootstrap/.zshrc-private ~
 
 # Restoring Dot Files
 echo "Installing dotiles"
 cd $REPO_ROOT
 git clone git@github.com:Ustice/dotfiles.git
+cd dotfiles
 cp .atom ~
 cp bin ~
 cp .zshrc ~
 
+source ~/.zshrc
 
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/.iterm_profile"
