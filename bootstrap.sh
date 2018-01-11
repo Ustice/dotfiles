@@ -14,7 +14,7 @@ echo "Install starting. You may be asked for your password (for sudo)."
 USERNAME=$(logname) # Username (whoami would return 'root')
 
 # Directories
-REPO_ROOT="/repo" # repos
+REPO_ROOT="/repos" # repos
 BINARIES="~/bin" # binaries
 SSH_KEYS="~/Dropbox/.ssh" # ssh key backup
 
@@ -43,38 +43,59 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 
 echo "Installing terminal utilities."
-brew install \
-  jenv \
-  mongodb \
-  node \
-  rbenv \
-  vcsh \
+declare -a homebrew_apps=(
+  "jenv"
+  "mongod"
+  "node"
+  "rbenv"
+  "vcsh"
+  "zsh"
+)
+
+for homebrew_app in "$homebrew_apps[@]"; do
+  if (brew ls $homebrew_app); then
+    echo "Installing $homebrew_app"
+    brew install $homebrew_app
+  else
+    echo "$homebrew_app is already installed... skipping."
+  fi
+done
 
 echo "Installing applications."
-brew cask install \
-  atom \
-  bettertouchtool \
-  dropbox \
-  epubquicklook \
-  flux \
-  font-source-code-pro-for-powerline \
-  google-chrome \
-  google-chrome-canary \
-  lastpass \
-  qlcolorcode \
-  qlimagesize \
-  qlmarkdown \
-  qlprettypatch \
-  qlstephen \
-  quicklook-csv \
-  quicklook-json \
-  skitch \
-  slack \
-  spotify \
-  the-unarchiver \
+declare -a apps=(
+  "install"
+  "atom"
+  "bettertouchtool"
+  "dropbox"
+  "epubquicklook"
+  "flux"
+  "font-source-code-pro-for-powerline"
+  "google-chrome"
+  "google-chrome-canary"
+  "lastpass"
+  "qlcolorcode"
+  "qlimagesize"
+  "qlmarkdown"
+  "qlprettypatch"
+  "qlstephen"
+  "quicklook-csv"
+  "quicklook-json"
+  "skitch"
+  "slack"
+  "spotify"
+  "the-unarchiver"
+)
 
-# ZSH
-brew install zsh
+for app in "$apps[@]"; do
+  if (brew ls $app); then
+    echo "Installing $app"
+    brew cask install $app
+  else
+    echo "$app is already installed... skipping."
+  fi
+done
+
+
 # Set zsh as the default shell
 sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 # PowerLevel9K theme
