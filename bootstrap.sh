@@ -45,15 +45,15 @@ brew tap caskroom/versions
 echo "Installing terminal utilities."
 declare -a homebrew_apps=(
   "jenv"
-  "mongod"
+  "mongodb"
   "node"
   "rbenv"
   "vcsh"
   "zsh"
 )
 
-for homebrew_app in "$homebrew_apps[@]"; do
-  if (brew ls $homebrew_app); then
+for homebrew_app in "${homebrew_apps[@]}"; do
+  if (! brew ls $homebrew_app); then
     echo "Installing $homebrew_app"
     brew install $homebrew_app
   else
@@ -63,9 +63,9 @@ done
 
 echo "Installing applications."
 declare -a apps=(
-  "install"
   "atom"
   "bettertouchtool"
+  "caprine"
   "dropbox"
   "epubquicklook"
   "flux"
@@ -86,8 +86,8 @@ declare -a apps=(
   "the-unarchiver"
 )
 
-for app in "$apps[@]"; do
-  if (brew ls $app); then
+for app in "${apps[@]}"; do
+  if (! brew cask ls $app); then
     echo "Installing $app"
     brew cask install $app
   else
@@ -97,7 +97,9 @@ done
 
 
 # Set zsh as the default shell
-sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells; then
+  sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells' && sudo chsh -s /usr/local/bin/zsh $(whoami)  
+fi
 # PowerLevel9K theme
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -124,18 +126,26 @@ cp ~/Dropbox/bootstrap/.zshrc-private ~
 # Restoring Dot Files
 echo "Installing dotiles"
 cd $REPO_ROOT
-git clone git@github.com:Ustice/dotfiles.git
+if [ ! -e "$REPO_ROOT/dotfiles" ]; then
+  git clone git@github.com:Ustice/dotfiles.git
+fi
+
 cd dotfiles
-cp -R .atom ~
-cp -R bin ~
-cp .zshrc ~
+cp -fR .atom ~
+find ./bin -type f -maxdepth 1 -exec cp {} ~/bin \;
+cp -f .zshrc ~
 
 echo "Installing PowerLevel9k"
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-source ~/.zshrc
+if [ ! -e ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
 
 # Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/.iterm_profile"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/dotfiles/.iterm_profile"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+echo "Please close your terminal session, and open a new one for the changes to be made."
+
+# Run installers
+open /usr/local/Caskroom/lastpass/latest/LastPass\ Installer
