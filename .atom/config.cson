@@ -87,8 +87,7 @@
     preset: "jquery"
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
-  "linter-ui-default":
-    panelHeight: 81
+  "linter-ui-default": {}
   "markdown-deluxe": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -117,6 +116,7 @@
   "tree-view":
     alwaysOpenExisting: true
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   "white-cursor": {}
@@ -128,6 +128,9 @@
 ".gfm.html.markdown.mson.source.text":
   editor:
     autoIndentOnPaste: false
+".js.source":
+  "toggle-quotes":
+    quoteCharacters: "\"'`"
 "source.gfm":
   editor:
     softWrap: true

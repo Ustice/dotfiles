@@ -17,9 +17,16 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 '.source.js':
-  'Testing console log':
+  'Testing console log - with value':
     'prefix': 'dcl'
-    'body': 'console.log(\'~~~ $1:\', $1); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+    'body': 'console.log(\`~~~ $1:\`, $1); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+  'Testing console log - JSON.stringified':
+    'prefix': 'dclj'
+    'body': 'console.log(\`~~~ $1: ${JSON.stringify($1, 0, 2)}\`); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+  'Testing console log - informational':
+    'prefix': 'dcli'
+    'body': 'console.log(\'~~~ $1:\'); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
   'Tagged debugger line':
     'prefix': 'dbr'
     'body': 'debugger; // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+  
