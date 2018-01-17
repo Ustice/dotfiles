@@ -107,6 +107,10 @@
     displayPath: false
   react: {}
   "spell-check": {}
+  "sync-settings":
+    gistDescription: "Atom sync-setings automatic update"
+    gistId: "e34b328f4a663c1107b7c5d9cbca88f3"
+    personalAccessToken: "41bc8b3d5313c8204e1fe986d4fe409fe98bac70"
   tabs:
     enableVcsColoring: true
     tabScrolling: true
