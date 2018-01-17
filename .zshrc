@@ -69,6 +69,8 @@ export PATH="/Users/jkleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
 export PATH="~/Library/Python/3.6/bin:$PATH"
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
+# Mongo 3.4
+export PATH="/usr/local/opt/mongodb@3.4/bin:$PATH"
 
 # Android SDK
 export ANDROID_HOME="/usr/local/opt/android-sdk"

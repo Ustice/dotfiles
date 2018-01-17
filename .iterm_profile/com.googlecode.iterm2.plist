@@ -255,15 +255,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>787 110 827 227 0 0 1680 1027 </string>
+	<string>787 107 827 230 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>240 400 796 473 0 0 1680 1050 </string>
+	<string>730 344 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1050 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>Allow Title Reporting</key>
 			<false/>
@@ -573,7 +575,7 @@
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>1</real>
+			<real>0.85603939194277101</real>
 			<key>HotKey Characters</key>
 			<string> </string>
 			<key>HotKey Characters Ignoring Modifiers</key>
@@ -905,6 +907,8 @@
 			<string>SauceCodePowerline-ExtraLight 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
+			<key>Non-ASCII Ligatures</key>
+			<true/>
 			<key>Normal Font</key>
 			<string>InputMono-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
@@ -1137,7 +1141,7 @@
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0731319878474777</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1152,6 +1156,10 @@
 	<string>EB5BF7DD-5AE5-4713-9DAE-A3C9F22368F6</string>
 	<key>NoSyncLastTipTime</key>
 	<real>537736028.95710695</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>

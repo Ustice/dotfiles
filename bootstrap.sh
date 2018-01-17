@@ -6,8 +6,9 @@
 # fi
 
 # Display commands as they are run
-PS4='$LINENO: '
-set -ex
+# PS4='$LINENO: '
+# set -ex
+set e
 
 echo "Install starting. You may be asked for your password (for sudo)."
 
@@ -22,9 +23,10 @@ SSH_KEYS="~/Dropbox/.ssh" # ssh key backup
 sudo mkdir -p $REPO_ROOT
 sudo chown $USERNAME $REPO_ROOT
 
+echo "Checking Xcode license status"
 # Accept XCode license
-echo "Accept the XCode License by pressing Q then accept."
 if (! xcode-select -p); then
+  echo "Accept the XCode License by pressing Q then accept."
   xcode-select --install
   sudo xcodebuild -license
 fi
@@ -44,22 +46,32 @@ brew tap caskroom/versions
 
 echo "Installing terminal utilities."
 declare -a homebrew_apps=(
+  "git-lfs"
   "jenv"
+  "jq"
+  "mas"
   "mongodb"
   "node"
   "rbenv"
   "vcsh"
+  "yarn"
   "zsh"
 )
 
 for homebrew_app in "${homebrew_apps[@]}"; do
-  if (! brew ls $homebrew_app); then
+  if ( ! brew ls $homebrew_app &> /dev/null ); then
     echo "Installing $homebrew_app"
     brew install $homebrew_app
   else
     echo "$homebrew_app is already installed... skipping."
   fi
 done
+
+echo "Installing git large file storage"
+if ( ! git lfs &> /dev/null ); then
+  sudo git lfs install
+  sudo git lfs install --system
+fi
 
 echo "Installing applications."
 declare -a apps=(
@@ -80,6 +92,7 @@ declare -a apps=(
   "qlstephen"
   "quicklook-csv"
   "quicklook-json"
+  "robo-3t"
   "skitch"
   "slack"
   "spotify"
@@ -87,7 +100,7 @@ declare -a apps=(
 )
 
 for app in "${apps[@]}"; do
-  if (! brew cask ls $app); then
+  if ( ! brew cask ls $app &> /dev/null ); then
     echo "Installing $app"
     brew cask install $app
   else
@@ -95,6 +108,23 @@ for app in "${apps[@]}"; do
   fi
 done
 
+
+echo "Installing App Store applications"
+declare -a app_store_apps=(
+  "547067197"  # Push To Talk
+  "1039633667" # Irvue
+  "563362017"  # CloudClip Manager
+  "926036361"  # LastPass
+)
+
+for mac_app in "${app_store_apps[@]}"; do
+  if (! mas list | grep $mac_app &> /dev/null ); then
+    echo "Installing $mac_app"
+    mas install $mac_app
+  else
+    echo "$mac_app is already installed... skipping."
+  fi
+done
 
 # Set zsh as the default shell
 if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells; then
