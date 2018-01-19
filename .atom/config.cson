@@ -20,7 +20,8 @@
     less:
       indent_size: 2
   "atom-pair": {}
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
   core:
     closeDeletedFileTabs: true
     disabledPackages: [
@@ -117,6 +118,8 @@
     usePreviewTabs: true
   "todo-show": {}
   "toggle-quotes": {}
+  touchbar:
+    buttons: "[{\"name\":\"my-new-label\",\"type\":\"button\",\"label\":\"//\",\"color\":\"#424242\",\"command\":\"editor:toggle-line-comments\"},{\"name\":\"spacer\",\"type\":\"button\",\"size\":\"small\",\"label\":\"🎨\",\"command\":\"No comand\",\"color\":\"#424242\"},{\"name\":\"comment-button\",\"type\":\"button\",\"label\":\"💅🏼\",\"command\":\"atom-beautify:beautify-editor\",\"color\":\"#424242\"},{\"name\":\"beautify-button\",\"type\":\"button\",\"label\":\"a..z\",\"command\":\"sort-lines:sort\",\"color\":\"#424242\"},{\"name\":\"color-picker\",\"type\":\"color-picker\",\"color\":\"#424242\"},{\"type\":\"button\",\"label\":\"Edit Touchbar\",\"elements\":[{\"name\":\"emoji-scrubber\",\"type\":\"scrubber\",\"label\":\"😄\",\"items\":\"emojis\"}],\"color\":\"#424242\",\"command\":\"touchbar:edit\"},{\"name\":\"toggle-command-palette\",\"type\":\"button\",\"label\":\"->\",\"command\":\" window:move-active-item-to-pane-on-right\",\"color\":\"#424242\"},{\"name\":\"edit-touchbar\",\"type\":\"button\",\"label\":\"<-\",\"command\":\" window:move-active-item-to-pane-on-left\",\"color\":\"#424242\"},{\"name\":\"toggle-github\",\"type\":\"spacer\",\"label\":\"GitHub\",\"color\":\"#424242\",\"command\":\" \"}]"
   "tree-view":
     alwaysOpenExisting: true
     hideIgnoredNames: true

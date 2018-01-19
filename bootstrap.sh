@@ -46,6 +46,7 @@ brew tap caskroom/versions
 
 echo "Installing terminal utilities."
 declare -a homebrew_apps=(
+  "ansiweather"
   "git-lfs"
   "jenv"
   "jq"
@@ -82,9 +83,13 @@ declare -a apps=(
   "epubquicklook"
   "flux"
   "font-source-code-pro-for-powerline"
+  "github"
   "google-chrome"
   "google-chrome-canary"
   "lastpass"
+  "licecap"
+  "near-lock"
+  "postman"
   "qlcolorcode"
   "qlimagesize"
   "qlmarkdown"
@@ -97,6 +102,7 @@ declare -a apps=(
   "slack"
   "spotify"
   "the-unarchiver"
+  "visual-studio-code"
 )
 
 for app in "${apps[@]}"; do
