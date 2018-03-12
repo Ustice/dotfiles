@@ -20,6 +20,11 @@
     less:
       indent_size: 2
   "atom-pair": {}
+  "autocomplete-modules":
+    vendors: [
+      "node_modules"
+      "."
+    ]
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
   core:
@@ -36,6 +41,7 @@
       "atom-typescript"
       "bookmarks"
       "git-time-machine"
+      "sonarlint"
     ]
     ignoredNames: [
       ".git"
@@ -47,6 +53,7 @@
       "node_modules"
       "bower_components"
       ".git"
+      ".sonarlint"
     ]
     packagesWithKeymapsDisabled: [
       "merge-conflicts"
@@ -59,7 +66,7 @@
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "\"Input Mono Narrow\""
+    fontFamily: "\"Fira Code\""
     invisibles: {}
     lineHeight: 1.375
     showInvisibles: true
