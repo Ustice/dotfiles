@@ -25,8 +25,8 @@
     'body': 'console.log(\`~~~ $1: ${JSON.stringify($1, 0, 2)}\`); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
   'Testing console log - informational':
     'prefix': 'dcli'
-    'body': 'console.log(\'~~~ $1:\'); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+    'body': 'console.log(\'~~~ $1\'); // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
   'Tagged debugger line':
     'prefix': 'dbr'
-    'body': 'debugger; // DEBUG ONLY!!! DO NOT MERGE WITH THIS'
+    'body': 'debugger; // eslint-disable-line DEBUG ONLY!!! DO NOT MERGE WITH THIS'
   
