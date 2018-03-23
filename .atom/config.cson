@@ -113,6 +113,7 @@
     sortPaletteColors: "by color"
   "project-view":
     displayPath: false
+  "rainbow-delimiters": {}
   react: {}
   "spell-check": {}
   "sync-settings":
