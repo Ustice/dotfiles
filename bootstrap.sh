@@ -76,16 +76,20 @@ fi
 
 echo "Installing applications."
 declare -a apps=(
+  "airserver"
   "atom"
   "bettertouchtool"
   "caprine"
   "charles-applejava"
+  "cyberduck"
   "dropbox"
+  "duet"
   "epubquicklook"
   "flux"
   "font-droid-sans-mono-for-powerline"
   "font-input"
   "font-source-code-pro-for-powerline"
+  "font-fira-code"
   "github"
   "google-chrome-canary"
   "google-chrome"
@@ -107,6 +111,7 @@ declare -a apps=(
   "spotify"
   "the-unarchiver"
   "visual-studio-code"
+  "vlc"
 )
 
 for app in "${apps[@]}"; do
