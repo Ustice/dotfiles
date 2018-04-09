@@ -42,6 +42,11 @@
       "bookmarks"
       "git-time-machine"
       "sonarlint"
+      "teletype"
+      "node-debugger"
+      "vue2-autocomplete"
+      "sync-settings"
+      "linter-jscs"
     ]
     ignoredNames: [
       ".git"
