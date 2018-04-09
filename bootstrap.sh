@@ -106,7 +106,6 @@ declare -a apps=(
   "quicklook-csv"
   "quicklook-json"
   "robo-3t"
-  "skitch"
   "slack"
   "spotify"
   "the-unarchiver"
@@ -123,13 +122,21 @@ for app in "${apps[@]}"; do
   fi
 done
 
-
+# To find these ids, use the `mas list` command
 echo "Installing App Store applications"
 declare -a app_store_apps=(
-  "547067197"  # Push To Talk
-  "1039633667" # Irvue
-  "563362017"  # CloudClip Manager
-  "926036361"  # LastPass
+"563362017"  # CloudClip Manager
+"668429425"  # Downcast
+"682658836"  # GarageBand
+"408981434"  # iMovie
+"1039633667" # Irvue
+"409183694"  # Keynote
+"926036361"  # LastPass
+"409203825"  # Numbers
+"409201541"  # Pages
+"547067197"  # Push To Talk
+"425955336"  # Skitch
+"497799835"  # Xcode
 )
 
 for mac_app in "${app_store_apps[@]}"; do
