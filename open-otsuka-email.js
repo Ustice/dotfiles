@@ -8,21 +8,29 @@ const {
 
 const Nightmare = require('nightmare');
 
-const createConnection = () => Nightmare({
-  show: process.argv.includes('--debug'),
-});
+const createConnection = (options) => {
+  const defaultConfig = {
+    show: process.argv.includes('--debug'),
+  };
+
+  const config = Object.assign({}, defaultConfig, options);
+
+  return Nightmare(config);
+};
 
 const emailLogin = () => {
-  return createConnection()
+  return createConnection({
+    waitTimeout: 180000,
+  })
     .goto(emailUrl)
     .type('input[type="email"]', email)
     .click('input[type="submit"]')
     .wait('#header')
     .type('input#passwordInput', password)
     .click('span#submitButton')
-    .wait('#displayName')
-    .click('input#KmsiCheckboxField')
-    .click('input[type="submit"]')
+    .wait('#idSIButton9')
+    .click('#idSIButton9')
+    .wait('#O365_NavHeader')
     .end()
     .then(result => console.log('Successfully logged into Otsuka email.'))
     .catch(error => console.error('Error logging into Otsuka email.', error))
