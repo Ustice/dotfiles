@@ -19,6 +19,9 @@
       indent_size: 2
     less:
       indent_size: 2
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
   "atom-pair": {}
   "autocomplete-modules":
     vendors: [
@@ -32,7 +35,6 @@
     disabledPackages: [
       "api-blueprint-preview"
       "task-list"
-      "linter-scss-lint"
       "language-javascript-better"
       "language-javascript-jsx"
       "jscs-fixer"
@@ -47,6 +49,12 @@
       "vue2-autocomplete"
       "sync-settings"
       "linter-jscs"
+      "white-cursor"
+      "atom-ide-ui"
+      "ide-typescript"
+      "language-vcard"
+      "markdown-table-formatter"
+      "react"
     ]
     ignoredNames: [
       ".git"
@@ -89,8 +97,15 @@
     jscsPath: "/usr/local/bin/jscs"
   linter: {}
   "linter-eslint":
+    eslintrcPath: "~/.eslintrc"
     fixOnSave: true
     globalNodePath: "/usr/local"
+    ignoreFixableRulesWhileTyping: true
+    rulesToSilenceWhileTyping: [
+      "no-trailing-spaces"
+      "eol-last"
+    ]
+    useGlobalEslint: true
   "linter-htmlhint": {}
   "linter-jscs":
     esnext: true
@@ -100,7 +115,8 @@
     preset: "jquery"
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-deluxe": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -136,7 +152,6 @@
   "tree-view":
     alwaysOpenExisting: true
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   "white-cursor": {}

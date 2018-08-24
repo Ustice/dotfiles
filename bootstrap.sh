@@ -43,17 +43,21 @@ fi
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
+brew tap theseal/ssh-askpass
 
 echo "Installing terminal utilities."
 declare -a homebrew_apps=(
   "ansiweather"
   "git-lfs"
+  "ical-buddy" # Required for GoldenChaos-BTT
   "jenv"
   "jq"
+  "lastpass-cli --with-pinentry"
   "mas"
   "mongodb"
   "node"
   "rbenv"
+  "thefuck"
   "vcsh"
   "yarn"
   "zsh"
@@ -93,6 +97,7 @@ declare -a apps=(
   "github"
   "google-chrome-canary"
   "google-chrome"
+  "highsierramediakeyenabler" # Required for GoldenChaos-BTT
   "java8"
   "lastpass"
   "licecap"
@@ -108,6 +113,7 @@ declare -a apps=(
   "robo-3t"
   "slack"
   "spotify"
+  "ssh-askpass"
   "the-unarchiver"
   "visual-studio-code"
   "vlc"
@@ -201,3 +207,7 @@ echo "Please close your terminal session, and open a new one for the changes to 
 
 # Run installers
 open /usr/local/Caskroom/lastpass/latest/LastPass\ Installer
+
+# Open GoldenChaos-BTT installation documentation
+echo "To install GoldenChaos-BTT Touchbar upgrade, please install from the opened page."
+open "https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281#heading--touch-bar-settings"

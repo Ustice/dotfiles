@@ -78,8 +78,9 @@ export ANDROID_HOME="/usr/local/opt/android-sdk"
 # # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
+  export VISUAL='atomsync'
 else
-  export EDITOR='atom'
+  export EDITOR='atomsync'
 fi
 
 # For node-oracledb: https://github.com/oracle/node-oracledb/blob/a867a81ab73ae8238b7fdabbfcf380fdf2eab26d/INSTALL.md#instosx
@@ -184,3 +185,12 @@ source <(npm completion)
 
 # rbenv
 eval "$(rbenv init -)"
+
+# Loads The Fuck (https://github.com/nvbn/thefuck)
+eval $(thefuck --alias)
+
+# loads pnpx cli fallback when using the @ in a command.
+# This is useful to run npm and gist commands without having to first install them.
+# See also https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b#6fcd
+source <(npx --shell-auto-fallback zsh)
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

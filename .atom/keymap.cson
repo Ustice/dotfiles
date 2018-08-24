@@ -47,4 +47,5 @@
   # 'alt-shift-up':    'indentation-jumper:select-up'
   'alt-shift-up': 'expand-region:expand'
   'alt-shift-down': 'expand-region:shrink'
-  'cmd-|': 'github:toggle-git-tab'
+  'cmd-alt-\\':       'github:toggle-git-tab'
+  'cmd-alt-|': 'github:toggle-github-tab'
