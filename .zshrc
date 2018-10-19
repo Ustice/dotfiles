@@ -118,11 +118,21 @@ alias localdev="export NODE_IP_OVERRIDE=''"
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 alias bump="npm version minor"
-alias weather="curl -sS https://radar.weather.gov/Conus/Loop/southeast_loop.gif | imgcat && ansiweather"
+alias weathermap="curl -sS https://radar.weather.gov/Conus/Loop/southeast_loop.gif"
+alias weather="weathermap | imgcat && ansiweather"
 alias forecast="curl -sS http://wttr.in/32601"
+alias ts="curl -sS https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png | imgcat"
+
+alias tunnel-db-qa4="echo 'Tunneling to QA4 Mongo on port 27778'; ssh -N -L 27778:qa4-db4.otsukadm.com:27017 jkleinberg@ci2.otsukadigital.com+qa4-db4.otsukadm.com"
+alias tunnel-db-dev2="echo 'Tunneling to DEV2 Mongo on port 27777'; ssh -N -L 27777:dev2-db1.otsukadm.com:27017 jkleinberg@ci2.otsukadigital.com+dev2-db1.otsukadm.com"
+
+alias cz="echo zoommtg://zoom.us/join?confno=9565361682 | pbcopy"
+
+# Restore Graphics Magick alias
+alias gm="/usr/local/Cellar/graphicsmagick/1.3.30/bin/gm $*"
 
 # Sometimes my keys get removed from SSH, and this reads them.
-ssh-add
+# ssh-add
 
 # Used for the standup utility
 export NOTES="/Users/jkleinberg/Dropbox/.notes"
@@ -157,6 +167,9 @@ export MM_LOCAL_DEV='true'
 
 ## JWA
 export NODE_PATH=/usr/local/lib/node_modules
+
+## Set Bat theme
+export BAT_THEME="Monokai Extended"
 
 ### AWS
 # export AWS_ACCESS_KEY_ID="PRIVATE"

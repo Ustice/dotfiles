@@ -48,16 +48,19 @@ brew tap theseal/ssh-askpass
 echo "Installing terminal utilities."
 declare -a homebrew_apps=(
   "ansiweather"
+  "bat"
+  "docker docker-compose docker-machine xhyve docker-machine-driver-xhyve" # 
   "git-lfs"
   "ical-buddy" # Required for GoldenChaos-BTT
   "jenv"
   "jq"
-  "lastpass-cli --with-pinentry"
+  "lastpass-cli --with-pinentry --with-doc"
   "mas"
   "mongodb"
   "node"
   "rbenv"
   "thefuck"
+  "tldr"
   "vcsh"
   "yarn"
   "zsh"
@@ -81,6 +84,7 @@ fi
 echo "Installing applications."
 declare -a apps=(
   "airserver"
+  "alfred"
   "atom"
   "bettertouchtool"
   "caprine"

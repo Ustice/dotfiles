@@ -115,8 +115,7 @@
     preset: "jquery"
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "markdown-deluxe": {}
   "markdown-preview":
     useGitHubStyle: true
