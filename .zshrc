@@ -5,9 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+ccl(){
+  echo -ne "\033[2K\r"
+}
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Note that zsh-syntax-highlighting needs to be last to function
+echo -ne "Loading zsh plugins..."
 plugins=(git npm z jira zsh-autosuggestions zsh-syntax-highlighting)
 
 POWERLEVEL9K_MODE='awesome-fontconfig'
@@ -50,6 +55,8 @@ zsh_wifi_signal(){
 
 export TERM="xterm-256color"
 
+ccl
+echo -ne "Loading oh-my-zsh..."
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -179,6 +186,8 @@ export BAT_THEME="Monokai Extended"
 
 
 # JENV (Multiple Java environmnent support)
+ccl
+echo -ne "Setting Java environment support..."
 export JENV_ROOT=/usr/local/var/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -191,19 +200,32 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 export HOMEBREW_GITHUB_API_TOKEN="PRIVATE"
 
 # Load private data
+ccl
+echo -ne "Loading private data..."
 test -e ~/.zshrc-private && source ~/.zshrc-private
 
 # NPM Tab completion
+ccl
+echo -ne "Installing npm autocompletions..."
 source <(npm completion)
 
 # rbenv
+ccl
+echo -ne "Setting Ruby environment..."
 eval "$(rbenv init -)"
 
 # Loads The Fuck (https://github.com/nvbn/thefuck)
+ccl
+echo -ne "Loading The F___..."
 eval $(thefuck --alias)
 
 # loads pnpx cli fallback when using the @ in a command.
 # This is useful to run npm and gist commands without having to first install them.
 # See also https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b#6fcd
+ccl
+echo -ne "Loading npx autocomplete..."
 source <(npx --shell-auto-fallback zsh)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+ccl
+echo "Session ready."

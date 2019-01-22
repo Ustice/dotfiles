@@ -97,15 +97,18 @@
     jscsPath: "/usr/local/bin/jscs"
   linter: {}
   "linter-eslint":
-    eslintrcPath: "~/.eslintrc"
-    fixOnSave: true
-    globalNodePath: "/usr/local"
-    ignoreFixableRulesWhileTyping: true
-    rulesToSilenceWhileTyping: [
-      "no-trailing-spaces"
-      "eol-last"
-    ]
-    useGlobalEslint: true
+    autofix:
+      fixOnSave: true
+      ignoreFixableRulesWhileTyping: true
+    disabling:
+      rulesToSilenceWhileTyping: [
+        "no-trailing-spaces"
+        "eol-last"
+      ]
+    global:
+      eslintrcPath: "~/.eslintrc"
+      globalNodePath: "/usr/local"
+      useGlobalEslint: true
   "linter-htmlhint": {}
   "linter-jscs":
     esnext: true

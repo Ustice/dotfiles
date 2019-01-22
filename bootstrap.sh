@@ -83,6 +83,7 @@ fi
 
 echo "Installing applications."
 declare -a apps=(
+  "aerial"
   "airserver"
   "alfred"
   "atom"
@@ -103,6 +104,7 @@ declare -a apps=(
   "google-chrome"
   "highsierramediakeyenabler" # Required for GoldenChaos-BTT
   "java8"
+  "karabiner-elements"
   "lastpass"
   "licecap"
   "near-lock"
@@ -120,6 +122,7 @@ declare -a apps=(
   "ssh-askpass"
   "the-unarchiver"
   "visual-studio-code"
+  "virtualbox"
   "vlc"
 )
 
