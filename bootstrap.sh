@@ -49,8 +49,8 @@ echo "Installing terminal utilities."
 declare -a homebrew_apps=(
   "ansiweather"
   "bat"
-  "docker docker-compose docker-machine xhyve docker-machine-driver-xhyve" # 
   "git-lfs"
+  "gpg"
   "ical-buddy" # Required for GoldenChaos-BTT
   "jenv"
   "jq"
@@ -91,6 +91,7 @@ declare -a apps=(
   "caprine"
   "charles-applejava"
   "cyberduck"
+  "docker"
   "dropbox"
   "duet"
   "epubquicklook"
@@ -163,7 +164,7 @@ done
 
 # Set zsh as the default shell
 if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells; then
-  sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells' && sudo chsh -s /usr/local/bin/zsh $(whoami)  
+  sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells' && sudo chsh -s /usr/local/bin/zsh $(whoami)
 fi
 # PowerLevel9K theme
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
