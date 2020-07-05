@@ -1,19 +1,39 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export TERM="xterm-256color"
+# export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ccl(){
   echo -ne "\033[2K\r"
 }
 
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Note that zsh-syntax-highlighting needs to be last to function
 echo -ne "Loading zsh plugins..."
-plugins=(git npm z jira zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  aws
+  cpanm
+  docker
+  docker-compose
+  dotenv
+  git
+  gulp
+  npm
+  perl
+  jira
+  z
+  zsh-autosuggestions
+
+# This must remain the last plugin
+  zsh-syntax-highlighting
+)
 
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
@@ -34,7 +54,7 @@ POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="235"
 POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="white"
 
 zsh_wifi_signal(){
-  local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I) 
+  local output=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -I)
   local airport=$(echo $output | grep 'AirPort' | awk -F': ' '{print $2}')
 
   if [ "$airport" = "Off" ]; then
@@ -48,12 +68,10 @@ zsh_wifi_signal(){
     [[ $speed -gt 100 ]] && color='%F{green}'
     [[ $speed -lt 50 ]] && color='%F{red}'
 
-    # echo -n "%{$color%}$ssid $speed Mb/s%{%f%}" # removed char not in my PowerLine font 
-    echo -n "%{$color%}$ssid%{%f%}" # removed char not in my PowerLine font 
+    # echo -n "%{$color%}$ssid $speed Mb/s%{%f%}" # removed char not in my PowerLine font
+    echo -n "%{$color%}$ssid%{%f%} " # removed char not in my PowerLine font
   fi
 }
-
-export TERM="xterm-256color"
 
 ccl
 echo -ne "Loading oh-my-zsh..."
@@ -63,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # User customizations
-export PATH="/Users/jkleinberg/bin:$PATH"
+export PATH="/Users/jason.kleinberg/bin:$PATH"
 # Android SDK
 export PATH="/usr/local/Cellar/android-sdk/22.6.2/tools:$PATH"
 # Heroku Toolbelt
@@ -71,23 +89,25 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Ruby gems
 export PATH="/usr/local/lib/ruby/gems/2.3.0:$PATH"
 # Chef gems
-export PATH="/Users/jkleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
+export PATH="/Users/jason.kleinberg/.chefdk/gem/ruby/2.3.0/bin:$PATH"
 # Adds Python (AWS CLI)
 export PATH="~/Library/Python/3.6/bin:$PATH"
 # yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 # Mongo 3.4
 export PATH="/usr/local/opt/mongodb@3.4/bin:$PATH"
+# Visual Studio Code
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH "
 
 # Android SDK
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 
-# # Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
-  export VISUAL='atomsync'
+  export VISUAL='vim'
 else
-  export EDITOR='atomsync'
+  export EDITOR='vim'
 fi
 
 # For node-oracledb: https://github.com/oracle/node-oracledb/blob/a867a81ab73ae8238b7fdabbfcf380fdf2eab26d/INSTALL.md#instosx
@@ -108,6 +128,7 @@ alias gaa="git add -A :/$*"
 alias gcm="git commit -m $*"
 alias gf="git fetch $*"
 alias gb="git symbolic-ref HEAD --short"
+alias gpcb="git push --set-upstream origin `gb`"
 alias grbs="git rebase --skip"
 export GITHUBUN="Ustice"
 alias cb="gb | tr -d '\n' | pbcopy"
@@ -130,19 +151,20 @@ alias weather="weathermap | imgcat && ansiweather"
 alias forecast="curl -sS http://wttr.in/32601"
 alias ts="curl -sS https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png | imgcat"
 
-alias tunnel-db-qa4="echo 'Tunneling to QA4 Mongo on port 27778'; ssh -N -L 27778:qa4-db4.otsukadm.com:27017 jkleinberg@ci2.otsukadigital.com+qa4-db4.otsukadm.com"
-alias tunnel-db-dev2="echo 'Tunneling to DEV2 Mongo on port 27777'; ssh -N -L 27777:dev2-db1.otsukadm.com:27017 jkleinberg@ci2.otsukadigital.com+dev2-db1.otsukadm.com"
-
 alias cz="echo zoommtg://zoom.us/join?confno=9565361682 | pbcopy"
 
 # Restore Graphics Magick alias
 alias gm="/usr/local/Cellar/graphicsmagick/1.3.30/bin/gm $*"
 
+# Docker
+alias dc="docker-compose $*"
+alias dce="docker-compose exec $*"
+
 # Sometimes my keys get removed from SSH, and this reads them.
 # ssh-add
 
 # Used for the standup utility
-export NOTES="/Users/jkleinberg/Dropbox/.notes"
+export NOTES="/Users/jason.kleinberg/.notes"
 
 function standup(){
   if [ -z "$1" ]; then
@@ -162,18 +184,11 @@ function trim() {
 }
 
 ## Node Development Environment
-export NODE_ENV="development"
+export NODE_ENV="dev"
 
 # Project-specific
-## Spider LMS
 export PGDATA="/usr/local/var/postgres"
 export NODE_IP_OVERRIDE='true'
-
-## MyMonopoly
-export MM_LOCAL_DEV='true'
-
-## JWA
-export NODE_PATH=/usr/local/lib/node_modules
 
 ## Set Bat theme
 export BAT_THEME="Monokai Extended"
@@ -183,7 +198,6 @@ export BAT_THEME="Monokai Extended"
 # export AWS_SECRET_ACCESS_KEY="PRIVATE"
 # export AWS_DEFAULT_REGION="PRIVATE"
 # export AWS_ES_HOST="PRIVATE"
-
 
 # JENV (Multiple Java environmnent support)
 ccl
@@ -219,7 +233,7 @@ ccl
 echo -ne "Loading The F___..."
 eval $(thefuck --alias)
 
-# loads pnpx cli fallback when using the @ in a command.
+# loads npx cli fallback when using the @ in a command.
 # This is useful to run npm and gist commands without having to first install them.
 # See also https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b#6fcd
 ccl
@@ -229,3 +243,8 @@ source <(npx --shell-auto-fallback zsh)
 
 ccl
 echo "Session ready."
+PATH="/Users/jason.kleinberg/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/jason.kleinberg/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/jason.kleinberg/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/jason.kleinberg/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/jason.kleinberg/perl5"; export PERL_MM_OPT;
