@@ -36,7 +36,9 @@ echo "Installing Homebrew."
 which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    mkdir -p /usr/local/homebrew
+    cd /usr/local/homebrew
+    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 else
     brew update
 fi
@@ -55,18 +57,13 @@ if [ ! -e "$REPO_ROOT/dotfiles" ]; then
 fi
 
 echo "Restoring configuration files"
-cd dotfiles
-ln -s "$REPO_ROOT/repos/dotfiles/Brewfile" ~/Brewfile
-ln -s "$REPO_ROOT/.zshrc" ~/.zshrc
-ln -s "$REPO_ROOT/bin" ~/bin
+ln -s "$REPO_ROOT/dotfiles/Brewfile" ~/Brewfile
+ln -s "$REPO_ROOT/dotfiles/.zshrc" ~/.zshrc
+ln -s "$REPO_ROOT/dotfiles/bin" ~/bin
 
 echo "Installing applications and terminal utilities."
 brew bundle install
 
-# Set zsh as the default shell
-if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells; then
-  sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells' && sudo chsh -s /usr/local/bin/zsh $(whoami)
-fi
 
 IFS=''
 
