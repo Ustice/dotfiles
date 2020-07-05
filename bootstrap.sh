@@ -68,9 +68,6 @@ if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells; then
   sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells' && sudo chsh -s /usr/local/bin/zsh $(whoami)
 fi
 
-echo "Installing Oh My ZShell"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 IFS=''
 
 # Specify the preferences directory
