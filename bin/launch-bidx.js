@@ -4,7 +4,6 @@ import '@jxa/global-type'
 import { run } from '@jxa/run'
 process.cwd = () => __dirname
 
-// console.log(util.inspect(process))
 const tuplefy = (promise) => promise
   .then(data => [ null, data ])
   .catch(error => [ error, null ])
@@ -14,8 +13,6 @@ const init = async () => {
 
   const [ error, result ] = await tuplefy(run((state) => {
     ObjC.import('stdlib')
-
-    console.log(JSON.stringify(state, null, 2))
 
     // include the iTerm application to your JXA script
     const iTerm = Application('iTerm2')
