@@ -1,0 +1,25 @@
+{
+  "name": "dotfiles",
+  "version": "0.0.0",
+  "description": "My various customizations all in one place.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ustice/dotfiles.git"
+  },
+  "author": "Jason Kleinberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ustice/dotfiles/issues"
+  },
+  "homepage": "https://github.com/Ustice/dotfiles#readme",
+  "dependencies": {
+    "@jxa/global-type": "^1.3.4",
+    "@jxa/run": "^1.3.4",
+    "@jxa/types": "^1.3.4"
+  }
+}
