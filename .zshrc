@@ -73,10 +73,6 @@ zsh_wifi_signal(){
   fi
 }
 
-ccl
-echo -ne "Loading oh-my-zsh..."
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -113,28 +109,13 @@ fi
 # For node-oracledb: https://github.com/oracle/node-oracledb/blob/a867a81ab73ae8238b7fdabbfcf380fdf2eab26d/INSTALL.md#instosx
 export DYLD_LIBRARY_PATH=/opt/oracle/instantclient
 
-# Adds ability to move cursor forward and back a word at a time
-bindkey '^[^[[C' forward-word
-bindkey '^[^[[D' backward-word
-
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+ccl
+echo -ne "Setting aliases..."
 
 # Convienience commands
 alias cpwd="pwd | tr -d '\n' | pbcopy"
-
-# Git aliases
-alias gs="git status --short"
-alias gaa="git add -A :/$*"
-alias gcm="git commit -m $*"
-alias gf="git fetch $*"
-alias gb="git symbolic-ref HEAD --short"
-alias gpcb="git push --set-upstream origin `gb`"
-alias grbs="git rebase --skip"
-export GITHUBUN="Ustice"
-alias cb="gb | tr -d '\n' | pbcopy"
-alias prune="git branch | grep "/" | xargs git branch -D"
-
-alias copy="tr -d '\n' | pbcopy"
 
 alias gdf="vcsh dotfiles"
 
@@ -147,18 +128,24 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 alias bump="npm version minor"
 alias weathermap="curl -sS https://radar.weather.gov/Conus/Loop/southeast_loop.gif"
-alias weather="weathermap | imgcat && ansiweather"
+alias weather="weathermap | imgcat -r $(($(tput lines)-2)) && ansiweather"
 alias forecast="curl -sS http://wttr.in/32601"
 alias ts="curl -sS https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png | imgcat"
 
-alias cz="echo zoommtg://zoom.us/join?confno=9565361682 | pbcopy"
+alias cz="echo 'zoommtg://zoom.us/join?confno=9565361682' | pbcopy"
 
 # Restore Graphics Magick alias
 alias gm="/usr/local/Cellar/graphicsmagick/1.3.30/bin/gm $*"
 
+# Reset Bluetooth
+alias rb="sudo kill -9 `ps ax | grep 'coreaudiod' | grep -v grep | awk '{print $1}'`"
+
 # Docker
 alias dc="docker-compose $*"
 alias dce="docker-compose exec $*"
+
+# AWS
+alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
 # Sometimes my keys get removed from SSH, and this reads them.
 # ssh-add
@@ -184,7 +171,7 @@ function trim() {
 }
 
 ## Node Development Environment
-export NODE_ENV="dev"
+export NODE_ENV="development"
 
 # Project-specific
 export PGDATA="/usr/local/var/postgres"
@@ -207,8 +194,29 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+ccl
+echo -ne "Loading oh-my-zsh..."
+cd $ZSH
+source oh-my-zsh.sh
+cd ~
+
+# Git aliases
+alias gs="git status --short"
+alias gaa="git add -A :/$*"
+alias gcm="git commit -m $*"
+alias gf="git fetch $*"
+alias gb="git symbolic-ref HEAD --short"
+alias gpcb="git push --set-upstream origin `gb`"
+alias grbs="git rebase --skip"
+export GITHUBUN="Ustice"
+alias cb="gb | tr -d '\n' | pbcopy"
+alias prune="git branch | grep "/" | xargs git branch -D"
+
+alias copy="tr -d '\n' | pbcopy"
+
 # iTerm 2/3 Shell integrations
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+unalias imgcat
 
 # Homebrew search support
 export HOMEBREW_GITHUB_API_TOKEN="PRIVATE"
