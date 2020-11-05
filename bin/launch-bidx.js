@@ -31,10 +31,7 @@ const init = async () => {
 
       const projectSession = window.currentSession()
       const terminalSession = projectSession.splitHorizontallyWithSameProfile()
-      const sendText = (session) => (text) => session.write({
-        text,
-        newline: true
-      })
+      const sendText = (session) => (text) => session.write({ text, newline: true })
 
       projects.reduce((session, commands, index, projects) => {
         commands.forEach(sendText(session))
