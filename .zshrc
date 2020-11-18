@@ -19,6 +19,7 @@ source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 echo -ne "Loading zsh plugins..."
 plugins=(
   aws
+  brew
   cpanm
   docker
   docker-compose
@@ -27,6 +28,7 @@ plugins=(
   gulp
   npm
   perl
+  thefuck
   jira
   z
   zsh-autosuggestions
@@ -75,7 +77,7 @@ zsh_wifi_signal(){
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jason.kleinberg/repos/dotfiles/bin"
 # User customizations
 export PATH="/Users/jason.kleinberg/bin:$PATH"
 # Android SDK
@@ -128,9 +130,9 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 alias bump="npm version minor"
 alias weathermap="curl -sS https://radar.weather.gov/Conus/Loop/southeast_loop.gif"
-alias weather="weathermap | imgcat -r $(($(tput lines)-2)) && ansiweather"
+alias weather="weathermap | imgcat --height $(($(tput lines)-2)) && ansiweather"
 alias forecast="curl -sS http://wttr.in/32601"
-alias ts="curl -sS https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png | imgcat"
+alias ts="curl -sS https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png | imgcat --height $(($(tput lines)-2))"
 
 alias cz="echo 'zoommtg://zoom.us/join?confno=9565361682' | pbcopy"
 
@@ -195,40 +197,46 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 ccl
-echo -ne "Loading oh-my-zsh..."
+echo -ne 'Loading oh-my-zsh...'
 cd $ZSH
 source oh-my-zsh.sh
 cd ~
 
+ccl
+echo -ne 'Settings aliases...'
+
 # Git aliases
-alias gs="git status --short"
-alias gaa="git add -A :/$*"
-alias gcm="git commit -m $*"
-alias gf="git fetch $*"
-alias gb="git symbolic-ref HEAD --short"
-alias gpcb="git push --set-upstream origin `gb`"
-alias grbs="git rebase --skip"
+alias gs='git status --short'
+alias gaa='git add -A :/$*'
+alias gcm='git commit -m $*'
+alias gf='git fetch $*'
+alias gb='git symbolic-ref HEAD --short'
+alias gpcb='git push --set-upstream origin $(gb)'
+alias grbs='git rebase --skip'
 export GITHUBUN="Ustice"
 alias cb="gb | tr -d '\n' | pbcopy"
-alias prune="git branch | grep "/" | xargs git branch -D"
+alias prune='git branch | grep '/" | xargs git branch -D"
 
-alias copy="tr -d '\n' | pbcopy"
+alias copy='tr -d "\n" | pbcopy'
+
+ccl
+echo -ne "Loading iterm2 integrations"
 
 # iTerm 2/3 Shell integrations
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 unalias imgcat
 
 # Homebrew search support
-export HOMEBREW_GITHUB_API_TOKEN="PRIVATE"
+export HOMEBREW_GITHUB_API_TOKEN='PRIVATE'
 
 # Load private data
 ccl
-echo -ne "Loading private data..."
+echo -ne 'Loading private data...'
 test -e ~/.zshrc-private && source ~/.zshrc-private
 
 # NPM Tab completion
 ccl
-echo -ne "Installing npm autocompletions..."
+echo -ne 'Installing npm autocompletions...'
 source <(npm completion)
 
 # rbenv
@@ -247,6 +255,7 @@ eval $(thefuck --alias)
 ccl
 echo -ne "Loading npx autocomplete..."
 source <(npx --shell-auto-fallback zsh)
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ccl

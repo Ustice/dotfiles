@@ -235,7 +235,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
@@ -849,12 +849,14 @@
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
+				<key>0xf702-0x280000-0x0</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>b</string>
+					<string>B</string>
 				</dict>
 				<key>0xf702-0x300000</key>
 				<dict>
@@ -884,12 +886,14 @@
 					<key>Text</key>
 					<string>[1;6C</string>
 				</dict>
-				<key>0xf703-0x280000</key>
+				<key>0xf703-0x280000-0x0</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>f</string>
+					<string>F</string>
 				</dict>
 				<key>0xf703-0x300000</key>
 				<dict>
@@ -998,12 +1002,14 @@
 					<key>Text</key>
 					<string>0x0b</string>
 				</dict>
-				<key>0xf728-0x80000</key>
+				<key>0xf728-0x80000-0x0</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
+					<key>Label</key>
+					<string></string>
 					<key>Text</key>
-					<string>d</string>
+					<string>D</string>
 				</dict>
 				<key>0xf729-0x20000</key>
 				<dict>

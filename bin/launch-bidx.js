@@ -26,7 +26,7 @@ const init = async () => {
       const projects = [
         [ 'cd ~/repos/bidx', 'docker-compose up' ],
         [ 'cd ~/repos/bidx-graphql', 'docker-compose up' ],
-        [ 'cd ~/repos/bidx-ui', 'npm run start' ],
+        [ 'cd ~/repos/bidx-ui', 'npm run serve' ],
       ]
 
       const projectSession = window.currentSession()
