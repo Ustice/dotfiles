@@ -33,16 +33,13 @@ cask "bettertouchtool"
 cask "docker"
 cask "font-hack-nerd-font"
 cask "github"
-cask "java"
 cask "lastpass"
 cask "mysqlworkbench"
 cask "postman"
 cask "robo-3t"
 cask "spotify"
 cask "zoomus"
-mas "CloudClip Manager", id: 563362017
 mas "Irvue", id: 1039633667
 mas "LastPass", id: 926036361
 mas "Push To Talk", id: 547067197
 mas "Skitch", id: 425955336
-mas "Xcode", id: 497799835
