@@ -25,6 +25,7 @@ brew "node", link: false
 brew "openjdk"
 brew "pinentry-mac"
 brew "python@3.8"
+brew "rcmdnk/file/brew-file"
 brew "ruby-build"
 brew "rbenv"
 brew "thefuck"
