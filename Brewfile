@@ -10,7 +10,6 @@ brew "ansiweather"
 brew "bat"
 brew "bluetoothconnector"
 brew "ctags"
-brew "docker", link: false
 brew "gifsicle"
 brew "git-crypt"
 brew "git-lfs"
