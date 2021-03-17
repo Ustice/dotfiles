@@ -1,70 +1,132 @@
-tap "eddieantonio/eddieantonio"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "sambadevi/powerlevel9k"
-tap "yulrizka/tap"
-brew "ansiweather"
-brew "bat"
-brew "bluetoothconnector"
-brew "ctags"
-brew "gifsicle"
-brew "git-crypt"
-brew "git-lfs"
-brew "htop"
-brew "imagemagick"
-brew "jenv"
-brew "magic-wormhole"
-brew "mas"
-brew "mitmproxy"
-brew "nasm"
-brew "node", link: false
-brew "openjdk"
-brew "pinentry-mac"
-brew "python@3.8"
-brew "rcmdnk/file/brew-file"
-brew "ruby-build"
-brew "rbenv"
-brew "thefuck"
-brew "tmux"
-brew "eddieantonio/eddieantonio/imgcat"
-brew "sambadevi/powerlevel9k/powerlevel9k"
-cask "alfred"
-cask "bettertouchtool"
-cask "caprine"
-cask "discord"
-cask "disk-inventory-x"
-cask "docker"
-cask "dropbox"
-cask "duet"
-cask "firefox"
-cask "font-hack-nerd-font"
-cask "github"
-cask "gpg-suite-no-mail"
-cask "iterm2"
-cask "keyboard-maestro"
-cask "lastpass"
-cask "messenger"
-cask "mysqlworkbench"
-cask "postman"
-cask "robo-3t"
-cask "sequel-pro"
-cask "slack"
-cask "spotify"
-cask "visual-studio-code"
-cask "wireshark"
-cask "zoom"
-mas "CloudClip Manager", id: 563362017
-mas "Downcast", id: 668429425
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Irvue", id: 1039633667
-mas "Keynote", id: 409183694
-mas "LastPass", id: 926036361
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Push To Talk", id: 547067197
-mas "Skitch", id: 425955336
-mas "Xcode", id: 497799835
+
+# tap repositories and their packages
+
+tap 'homebrew/core'
+brew 'ansiweather'
+brew 'aom'
+brew 'autoconf'
+brew 'bat'
+brew 'bluetoothconnector'
+brew 'ctags'
+brew 'docbook'
+brew 'docbook-xsl'
+brew 'docker'
+brew 'freetype'
+brew 'gdbm'
+brew 'gettext'
+brew 'ghostscript'
+brew 'gifsicle'
+brew 'git-crypt'
+brew 'git-lfs'
+brew 'glib'
+brew 'gnu-getopt'
+brew 'htop'
+brew 'icu4c'
+brew 'ilmbase'
+brew 'imagemagick'
+brew 'jenv'
+brew 'jpeg'
+brew 'jq'
+brew 'libassuan'
+brew 'libde265'
+brew 'libevent'
+brew 'libffi'
+brew 'libgpg-error'
+brew 'libheif'
+brew 'liblqr'
+brew 'libomp'
+brew 'libpng'
+brew 'libsodium'
+brew 'libtiff'
+brew 'libtool'
+brew 'little-cms2'
+brew 'magic-wormhole'
+brew 'mas'
+brew 'mitmproxy'
+brew 'mpdecimal'
+brew 'nasm'
+brew 'ncurses'
+brew 'node'
+brew 'oniguruma'
+brew 'openexr'
+brew 'openjdk'
+brew 'openjpeg'
+brew 'openssl@1.1'
+brew 'pcre'
+brew 'pinentry-mac'
+brew 'pkg-config'
+brew 'protobuf'
+brew 'python@3.8'
+brew 'python@3.9'
+brew 'rbenv'
+brew 'readline'
+brew 'ruby-build'
+brew 'shared-mime-info'
+brew 'sqlite'
+brew 'tcl-tk'
+brew 'thefuck'
+brew 'tmux'
+brew 'utf8proc'
+brew 'webp'
+brew 'x265'
+brew 'xmlto'
+brew 'xz'
+brew 'zsh'
+
+tap 'homebrew/bundle'
+
+tap 'homebrew/cask-fonts'
+cask 'font-hack-nerd-font'
+
+tap 'homebrew/cask-versions'
+
+tap 'homebrew/cask'
+cask 'alfred'
+cask 'bettertouchtool'
+cask 'caprine'
+cask 'discord'
+cask 'disk-inventory-x'
+cask 'docker'
+cask 'dropbox'
+cask 'duet'
+cask 'firefox'
+cask 'github'
+cask 'gpg-suite-no-mail'
+cask 'iterm2'
+cask 'keyboard-maestro'
+cask 'lastpass'
+cask 'messenger'
+cask 'mysqlworkbench'
+cask 'postman'
+cask 'robo-3t'
+cask 'sequel-pro'
+cask 'slack'
+cask 'spotify'
+cask 'visual-studio-code'
+cask 'wireshark'
+cask 'zoom'
+
+tap 'eddieantonio/eddieantonio'
+brew 'imgcat'
+
+tap 'rcmdnk/file'
+brew 'brew-file'
+
+tap 'sambadevi/powerlevel9k'
+brew 'powerlevel9k'
+
+tap 'yulrizka/tap'
+
+# App Store applications
+mas 'CloudClip Manager (1.4.1)', id: 563362017
+mas 'Downcast (2.9.62)', id: 668429425
+mas 'GarageBand (10.3.5)', id: 682658836
+mas 'iMovie (10.2.3)', id: 408981434
+mas 'Irvue (2.7.10)', id: 1039633667
+mas 'Keynote (10.3.9)', id: 409183694
+mas 'LastPass (4.4.0)', id: 926036361
+mas 'Numbers (10.3.9)', id: 409203825
+mas 'Pages (10.3.9)', id: 409201541
+mas 'Push To Talk (1.3)', id: 547067197
+mas 'Skitch (2.9)', id: 425955336
+mas 'Xcode (12.4)', id: 497799835
