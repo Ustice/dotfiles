@@ -60,6 +60,7 @@ echo "Restoring configuration files"
 ln -s "$REPO_ROOT/dotfiles/Brewfile" ~/Brewfile
 ln -s "$REPO_ROOT/dotfiles/.zshrc" ~/.zshrc
 ln -s "$REPO_ROOT/dotfiles/bin" ~/bin
+ln -s "$REPO_ROOT/dotfiles/.p10k.sh" ~/.p10k.sh
 
 echo "Installing applications and terminal utilities."
 brew bundle install
