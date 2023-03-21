@@ -1,0 +1,21 @@
+{
+  "app.beta": true,
+  "app.preferredTerminal": "iTerm2",
+  "autocomplete.disable": false,
+  "autocomplete.fontFamily": "\"Hack Nerd Font Mono\"",
+  "autocomplete.fuzzySearch": false,
+  "autocomplete.keybindings.control+a": "showAutocomplete",
+  "autocomplete.keybindings.control+p": "navigateUp",
+  "autocomplete.keybindings.enter": "ignore",
+  "autocomplete.keybindings.insertCommonPrefixOrNavigateDown": "tab",
+  "autocomplete.keybindings.shift+tab": "ignore",
+  "autocomplete.keybindings.tab": "insertSelected",
+  "autocomplete.keybindings.up": "navigateUp",
+  "autocomplete.preferVerboseSuggestions": true,
+  "autocomplete.scrollWrapAround": true,
+  "autocomplete.theme": "monokai-dark",
+  "dotfiles.sourceImmediately": "always",
+  "integrations.experimental": true,
+  "plugins.beta": true,
+  "telemetry.disabled": true
+}

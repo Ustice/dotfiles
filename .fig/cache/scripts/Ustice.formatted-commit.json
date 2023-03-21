@@ -1,0 +1,49 @@
+{
+  "name": "formatted-commit",
+  "displayName": "Create BDX commit",
+  "description": "",
+  "templateVersion": 3,
+  "tags": [],
+  "rules": [],
+  "namespace": "Ustice",
+  "parameters": [
+    {
+      "name": "message",
+      "displayName": "Commit message",
+      "description": null,
+      "dependsOn": [],
+      "type": "text",
+      "typeData": {
+        "placeholder": "Updates dependencies"
+      }
+    },
+    {
+      "name": "args",
+      "displayName": "git commit args",
+      "description": null,
+      "dependsOn": [],
+      "type": "text",
+      "typeData": {
+        "placeholder": "-n --no-edit"
+      }
+    }
+  ],
+  "template": "import 'zx/globals'\n\nconsole.log('FIG_ARGS', process.env.FIG_ARGS)\n\nconst branchName = await $`git symbolic-ref HEAD --short`\n\nconst found = branchName.stdout.match(/^bdx[ _-]?(\\d{3,})/i)\n\nif (!found) {\n\tconsole.error('Could not read Jira ticket number from the git branch name. To fix this problem run `git branch -m bdx4928`')\n\tprocess.exit(1)\n}\n\nconst [ , jiraTicketNumber ] = found\nconst message = `BDX-${ jiraTicketNumber } ${ fig.inputs.message }`\nconst [ result ] = await Promise.allSettled([$`git commit -m ${ message } ${ fig.inputs.args }`])\n\nif (result.status = 'rejected') {\t\n\tconsole.error(chalk.red`Could not create commit.`, chalk.gray`Please review the git output for more information.`)\n\tconst errorCode = result.value?.exitCode ?? result.reason?.exitCode ?? 1\n\tconsole.log('Error code', errorCode)\n\tthrow new Error('FOO EXPLODED')\n\tprocess.exit(result.value?.exitCode ?? result.reason?.exitCode ?? 1)\n}\n\nconsole.log('Commit created.')\n\n\n",
+  "tree": [
+    "const fig = {\n\tinputs: {\n\t\tmessage: ",
+    {
+      "name": "message"
+    },
+    ",\n\t\targs: ",
+    {
+      "name": "args"
+    },
+    "\n\t}\n};\n",
+    "import 'zx/globals'\n\nconsole.log('FIG_ARGS', process.env.FIG_ARGS)\n\nconst branchName = await $`git symbolic-ref HEAD --short`\n\nconst found = branchName.stdout.match(/^bdx[ _-]?(\\d{3,})/i)\n\nif (!found) {\n\tconsole.error('Could not read Jira ticket number from the git branch name. To fix this problem run `git branch -m bdx4928`')\n\tprocess.exit(1)\n}\n\nconst [ , jiraTicketNumber ] = found\nconst message = `BDX-${ jiraTicketNumber } ${ fig.inputs.message }`\nconst [ result ] = await Promise.allSettled([$`git commit -m ${ message } ${ fig.inputs.args }`])\n\nif (result.status = 'rejected') {\t\n\tconsole.error(chalk.red`Could not create commit.`, chalk.gray`Please review the git output for more information.`)\n\tconst errorCode = result.value?.exitCode ?? result.reason?.exitCode ?? 1\n\tconsole.log('Error code', errorCode)\n\tthrow new Error('FOO EXPLODED')\n\tprocess.exit(result.value?.exitCode ?? result.reason?.exitCode ?? 1)\n}\n\nconsole.log('Commit created.')\n\n\n"
+  ],
+  "isOwnedByUser": true,
+  "runtime": "NODE",
+  "relevance": 198.89442008848255,
+  "lastInvokedAt": "2022-12-08T07:51:34.359Z",
+  "lastInvokedAtByUser": "2022-12-08T07:51:34.359Z"
+}

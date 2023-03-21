@@ -1,0 +1,289 @@
+
+- command: ort AWS_SESSION_TOKEN=\"IQoJb3JpZ2luX2VjEPn//////////wEaCXVzLWVhc3QtMSJHMEUCIDAiOfSVlmuwuYLanVQEV4FBjBWz0zdA4DYvgLCK8vxDAiEAsnXGlELwIJYSdoq4veREzyeZ/rtj9dcvhoWPy1amAMoqsAMI8f//////////ARAAGgw2MzUzMzk2NTg1MjEiDJoflHD/fVKmXgKnCCqEA/jp5Fw0X52iBKc6EcjAGzyOZQL7Nq4hRNY4l7mkfb0ZEaLeWK1QRit3/EIK4OlzNWAz/WgsiUkgcdaOXgWtaa3v6h810pty15+JMLeQLK2ak9kiUWLECE1CIewYuo4/EyEhpcZhpiiYT2k/91Y8cvQnak3EwEinmDDV9cXpoAWcbvqZUEc6ufUKq56djO1npN5EOGMSpsfPYvTpMRce4RwijjbhDo3FPQViuX8quN2WxA0+9NpNmaULIvh1dk/F5V3rr6UDpBbwYvDEbKyStPAOXLfZbvuSZT901GDIxyLhiw+yEXS/QcH5nGqpKLrHt0acEcB2YqrUeWaRICKOgg1HmG6ifKL0LtPAcpzkkiNVHBPLNL3fvONfLdK7415ibGzkGmSdO9Z3r6tHNEjaRPPy6aMPKQ1qC4/X5dCDKFwlwBzFvjarIoN+wZ1f7EIGwjiOwTTor5LMsUkgLdUTmMWPS4SWtaqWYZUBSGysxfVJi6zV3LGUbyL/6+dZO+bNgwEbnR0w9vjOmwY6pgE9V04NFTCQmXfllBmXWd5DgpYKONPNSEDJoYrKdX0nl7FQUzvJhuOJ8uijCloDUqhAk/LbYUhQenY8VQEw2h+tmKO7nl+vMaDhL1vDN9/DutARM8tHdIOURfGgCvroa/eUXKQA4j3yy43GcMUzizn/F0oZcmv/gX/In3JH0IRAcrnUo5EQM+hwO0LpNNEidrvNu4tt/J5p5clw9vMEyfkHqkcDlTrJ\"
+  exit_code: 0
+  shell: zsh
+  session_id: 88c94cc9-76cb-4a8d-847b-2791a6e9fcdc
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1668529286
+- command: l https://bun.sh/install | bash
+  exit_code: 0
+  shell: zsh
+  session_id: 509ed63c-898d-4225-bbfe-f4f4e31359dc
+  cwd: /Users/jason.kleinberg/repos/odd-giants
+  time: 1669415713
+- command: husky set .husky/pre-commit \"npx pretty-quick --staged\"
+  exit_code: 0
+  shell: zsh
+  session_id: da12dbbb-314e-435e-8b43-8f068714c1b5
+  cwd: /Users/jason.kleinberg/repos/odd-giants
+  time: 1669597415
+- command: husky set .husky/pre-commit \"npx pretty-quick --staged\"
+  exit_code: 0
+  shell: zsh
+  session_id: da12dbbb-314e-435e-8b43-8f068714c1b5
+  cwd: /Users/jason.kleinberg/repos/odd-giants
+  time: 1669598873
+- command: A^[OA
+  exit_code: 0
+  shell: zsh
+  session_id: ef3f9465-2e28-4114-994f-dfd2d558427b
+  cwd: /Users/jason.kleinberg/repos/bidx-ui
+  time: 1670354620
+- command: ove from custom build system to use Gulp.
+  exit_code: 0
+  shell: zsh
+  session_id: ef32a351-9b81-4f5e-a6fa-6648821a9162
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670431071
+- command: fig doctor
+  exit_code: 0
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477524
+- command: fig issue prompt broke
+  exit_code: 0
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477754
+- command: ls
+  exit_code: 0
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477756
+- command: fig doctor
+  exit_code: 0
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477853
+- command: l
+  exit_code: 127
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477865
+- command: ls
+  exit_code: 0
+  shell: zsh
+  session_id: 8f1753fc-a623-45ff-a9c8-724a1e92a7b2
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1670477867
+- command: pmz
+  exit_code: 127
+  shell: zsh
+  session_id: 9ae2c1f1-ff93-4f9a-8b91-5162b3264b6f
+  cwd: /Users/jason.kleinberg
+  time: 1670478270
+- command: omz
+  exit_code: 127
+  shell: zsh
+  session_id: 9ae2c1f1-ff93-4f9a-8b91-5162b3264b6f
+  cwd: /Users/jason.kleinberg
+  time: 1670478272
+- command: ls .fig
+  exit_code: 0
+  shell: zsh
+  session_id: 9ae2c1f1-ff93-4f9a-8b91-5162b3264b6f
+  cwd: /Users/jason.kleinberg
+  time: 1670478333
+- command: which rg
+  exit_code: 1
+  shell: zsh
+  session_id: 9ae2c1f1-ff93-4f9a-8b91-5162b3264b6f
+  cwd: /Users/jason.kleinberg
+  time: 1670478529
+- command: ~/.local/bin/fig init zsh pre --rcfile zprofile
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479022
+- command: ~/.local/bin/fig init zsh pre --rcfile zprofile | pbcopy
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479044
+- command: >....                                                  if [[ -z \"${BASH}\" || \"${BASH_VERSINFO[0]}\" -gt \"3\" ]]; then                             while read -rt 0; do                                                                     if [[ -n \"${BASH}\" ]]; then                                                              read -r                                                                              fi                                                                                     INITIAL_TEXT=\"${INITIAL_TEXT}${REPLY}\\n\"                                             done                                                                                 fi                                                                                     FIG_EXECUTION_STRING=\"${FIG_EXECUTION_STRING}\" FIG_START_TEXT=\"$(printf \"%b\" \"${INITIAL_TEXT}\")\" FIG_SHELL=\"${FIG_SHELL}\" FIG_IS_LOGIN_SHELL=\"${FIG_IS_LOGIN_SHELL}\" exec -a \"${FIG_TERM_NAME}\" \"${FIG_TERM_PATH}\"                                                 fi                                                                                   # else                                                                                 #   FIG_DID_NOT_EXEC_FIGTERM=1                                                         fi                                                                                                                                                                            jason.kleinberg@MacbookPro-6336 ~ % ~/.local/bin/fig init zsh pre --rcfile zprofile | p                                                                                       bcopy                                                                                  jason.kleinberg@MacbookPro-
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479084
+- command: [ -x ~/.local/bin/fig ] && eval \"$(~/.local/bin/fig init zsh post --rcfile zshrc)\"
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479097
+- command: ~/.local/bin/fig init zsh post --rcfile zshrc | pbcopy
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479107
+- command: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+  exit_code: 0
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479328
+- command: omz update
+  exit_code: 127
+  shell: zsh
+  session_id: a8fd541a-5ddf-4631-80c3-eb46ee43759e
+  cwd: /Users/jason.kleinberg
+  time: 1670479331
+- command: .p10k.zsh
+  exit_code: 127
+  shell: zsh
+  session_id: fdb5b266-23a5-45c0-b507-d7220b7abda0
+  cwd: /Users/jason.kleinberg
+  time: 1670479753
+- command: l .p10k
+  exit_code: 127
+  shell: zsh
+  session_id: fdb5b266-23a5-45c0-b507-d7220b7abda0
+  cwd: /Users/jason.kleinberg
+  time: 1670479759
+- command: l
+  exit_code: 127
+  shell: zsh
+  session_id: fdb5b266-23a5-45c0-b507-d7220b7abda0
+  cwd: /Users/jason.kleinberg
+  time: 1670479761
+- command: ls
+  exit_code: 0
+  shell: zsh
+  session_id: fdb5b266-23a5-45c0-b507-d7220b7abda0
+  cwd: /Users/jason.kleinberg
+  time: 1670479762
+- command: source .oh-my-zsh-BACKUP/oh-my-zsh.sh
+  exit_code: 0
+  shell: zsh
+  session_id: 6ba5412d-9a91-4040-8359-da93053e18c0
+  cwd: /Users/jason.kleinberg
+  time: 1670481105
+- command: omz
+  exit_code: 127
+  shell: zsh
+  session_id: e8264d77-fa14-442a-9d25-b9a79dd0fd36
+  cwd: /Users/jason.kleinberg
+  time: 1670481146
+- command: omz
+  exit_code: 127
+  shell: zsh
+  session_id: e8264d77-fa14-442a-9d25-b9a79dd0fd36
+  cwd: /Users/jason.kleinberg
+  time: 1670481304
+- command: fig source
+  exit_code: 0
+  shell: zsh
+  session_id: 90da12a0-837c-40f6-bf36-5ebfd41dc5b5
+  cwd: /Users/jason.kleinberg
+  time: 1670481633
+- command: : event not found: r()
+  exit_code: 0
+  shell: zsh
+  session_id: e1b6a260-df1e-4791-a05d-a142be11b170
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1672757643
+- command: : parse error near `}'
+  exit_code: 0
+  shell: zsh
+  session_id: e1b6a260-df1e-4791-a05d-a142be11b170
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1672757690
+- command: it log
+  exit_code: 0
+  shell: zsh
+  session_id: e1b6a260-df1e-4791-a05d-a142be11b170
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1672841929
+- command: it log                                                                                                              ❯ git log                                                                                                              ❯ git log
+  exit_code: 0
+  shell: zsh
+  session_id: e1b6a260-df1e-4791-a05d-a142be11b170
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1672841934
+- command: a.prisma'
+  exit_code: 0
+  shell: zsh
+  session_id: e6ad87a7-b61a-4e45-aec9-a5baa5495d70
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1672853163
+- command: l https://bun.sh/install | bash                                                                                                                                                                                                                                                                                                                                                                                                                                            gco
+  exit_code: 0
+  shell: zsh
+  session_id: 805ac871-ee2c-42e3-bb04-66c3edd58574
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1673275641
+- command: rage=false'
+  exit_code: 16
+  shell: zsh
+  session_id: ad41e857-9a3f-44ed-98f0-eba1abe9738b
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1673645626
+- command: - --coverage=false'
+  exit_code: 1
+  shell: zsh
+  session_id: ad41e857-9a3f-44ed-98f0-eba1abe9738b
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1673645662
+- command: - --coverage=false'
+  exit_code: 1
+  shell: zsh
+  session_id: ad41e857-9a3f-44ed-98f0-eba1abe9738b
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1673646766
+- command: --name ${ mockServerName } \\\\                                                                                                                        -v $(pwd):/root/apis \\\\                                                                                                                              -p 9003:4010 \\\\                                                                                                                                      stoplight/prism mock \\\\                                                                                                                                -h 0.0.0.0  \\\\                                                                                                                                       /root/apis/api.yml
+  exit_code: 127
+  shell: zsh
+  session_id: c8806362-01ce-4e26-9ae4-067218e6653c
+  cwd: /Users/jason.kleinberg/repos/odd-giants
+  time: 1674600670
+- command: --name ${ mockServerName } \\\\                                                                                                                        -v $(pwd):/root/apis \\\\                                                                                                                              -p 9003:4010 \\\\                                                                                                                                      stoplight/prism mock \\\\                                                                                                                                -h 0.0.0.0  \\\\                                                                                                                                       /root/apis/api.yml
+  exit_code: 0
+  shell: zsh
+  session_id: c8806362-01ce-4e26-9ae4-067218e6653c
+  cwd: /Users/jason.kleinberg/repos/odd-giants
+  time: 1674600716
+- command: \"
+  exit_code: 0
+  shell: zsh
+  session_id: 3d543cb7-e676-4a3c-895e-7484e1676a2f
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1675291155
+- command: .0 src/main.ts'
+  exit_code: 1
+  shell: zsh
+  session_id: 61867ad4-d56e-4ba4-a41d-3aeac19cd644
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1676400620
+- command: .0 src/main.ts'
+  exit_code: 1
+  shell: zsh
+  session_id: ea3ea37b-336a-4a79-9d7b-df0733884578
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1676406359
+- command: .0 src/main.ts'
+  exit_code: 1
+  shell: zsh
+  session_id: 80314b9c-4ffa-43f2-82f9-088e8d318b34
+  cwd: /Users/jason.kleinberg/repos/bidx-graphql
+  time: 1676406398
+- command: packages are looking for funding
+  exit_code: 127
+  shell: zsh
+  session_id: 8c545926-dad8-40c4-b838-7203951f757c
+  cwd: /Users/jason.kleinberg/repos/traveller
+  time: 1678572667
+- command: content: ['./index.html', './src/**/*.{svelte,js,ts}'],                                                                                                                           theme: {                                                                                                                                                                              extend: {}                                                                                                                                                                    },                                                                                                                                                                                plugins: []                                                                                                                                                                   };                                                                                                                                                                                ``;
+  exit_code: 0
+  shell: zsh
+  session_id: afaaef53-de4f-4540-9197-3038b2443bb7
+  cwd: /Users/jason.kleinberg/traveller2
+  time: 1678635786
