@@ -33,3 +33,5 @@ export NODE_IP_OVERRIDE='true'
 ## Set Bat theme
 export BAT_THEME="Monokai Extended"
 
+# Prefer Homebrew-managed tools in every zsh session.
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
